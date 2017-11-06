@@ -1,11 +1,8 @@
 package ru.job4j;
 
 /**
- * Calculate.
- *
- * @author Petr Arsentev (parsentev@yandex.ru)
- * @version $Id$
- * @since 0.1
+ * Class Calculate
+ * @author Aleksey Kornetov (all-1313@yandex.ru)
  */
 
 public class Calculate{
