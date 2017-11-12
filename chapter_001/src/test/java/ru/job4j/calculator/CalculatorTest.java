@@ -21,7 +21,6 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
-
     /**
      * Тест разность
      */
