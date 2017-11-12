@@ -1,4 +1,3 @@
-
 package ru.job4j.calculator;
 
 import com.sun.org.apache.xerces.internal.util.PropertyState;
@@ -20,7 +19,6 @@ public class CalculatorTest {
         double expected = 2D;
         assertThat(result, is(expected));
     }
-
     /**
      * Тест разность
      */
@@ -42,7 +40,6 @@ public class CalculatorTest {
         double expected = 2D;
         assertThat(result, is(expected));
     }
-
     /**
      * Тест умножение
      */
