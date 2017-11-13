@@ -1,7 +1,5 @@
 package ru.job4j.calculator;
 
-import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {

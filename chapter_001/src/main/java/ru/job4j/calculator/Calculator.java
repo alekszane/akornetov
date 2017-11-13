@@ -10,7 +10,6 @@ public class Calculator {
     /**
      * Сумма
      */
-
 	public void add (double first, double second) {
 		this.result = first + second;
 	}
@@ -26,7 +25,6 @@ public class Calculator {
 	public void div (double first, double second) {
 		this.result = first / second;
 	}
-
     /**
      * Умножение
      */
