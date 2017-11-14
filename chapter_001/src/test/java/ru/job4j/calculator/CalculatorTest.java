@@ -1,7 +1,5 @@
 package ru.job4j.calculator;
 
-import static org.junit.Assert.assertThat;
-
 public class CalculatorTest {
     /**
      * Тест Сумма
