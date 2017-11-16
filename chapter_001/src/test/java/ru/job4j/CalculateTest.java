@@ -1,6 +1,8 @@
 package ru.job4j;
 
 import org.junit.Test;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
 * Test.
@@ -9,7 +11,7 @@ import org.junit.Test;
 * @version $Id$
 * @since 0.1
 */
-public class CalculateTest{
+public class CalculateTest {
 /**
 * Test echo.
 */ @Test

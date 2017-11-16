@@ -6,7 +6,7 @@ public class Calculator {
 	/**
 	 * Результат вычисления
 	*/
-	public double result;
+	private double result;
     /**
      * Сумма
      */

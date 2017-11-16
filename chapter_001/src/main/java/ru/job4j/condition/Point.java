@@ -18,7 +18,7 @@ public class Point {
 	}
 
 	public boolean is(int a, int b) {
-		if(this.y == this.x * a + b) {
+		if (this.y == this.x * a + b) {
 			return true;
 		} else {
 			return false;
