@@ -1,9 +1,7 @@
 package ru.job4j.calculator;
+import org.junit.Test;
 
 public class CalculatorTest {
-    /**
-     * Тест Сумма
-     */
     @Test
     public void whenAddOnePlusOneThenTwo() {
         Calculator calc = new Calculator();
@@ -12,9 +10,7 @@ public class CalculatorTest {
         double expected = 2D;
         assertThat(result, is(expected));
     }
-    /**
-     * Тест разность
-     */
+
     @Test
     public void whenSubtractOneMinusOneThenTwo() {
         calc.subtract(1D, 1D);
@@ -22,9 +18,7 @@ public class CalculatorTest {
         double expected = 2D;
         assertThat(result, is(expected));
     }
-    /**
-     * Тест деление
-     */
+	
     @Test
     public void whenDivOneDelimOneThenTwo() {
         Calculator calc = new Calculator();
@@ -33,9 +27,7 @@ public class CalculatorTest {
         double expected = 2D;
         assertThat(result, is(expected));
     }
-    /**
-     * Тест умножение
-     */
+	
     @Test
     public void whenMultipleOneYmnozaemOneThenTwo() {
         Calculator calc = new Calculator();

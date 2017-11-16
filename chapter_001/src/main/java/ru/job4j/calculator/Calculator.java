@@ -6,29 +6,29 @@ public class Calculator {
 	/**
 	 * Результат вычисления
 	*/
-	private double result;
+	public double result;
     /**
      * Сумма
      */
-	public void add (double first, double second) {
+	public void add(double first, double second) {
 		this.result = first + second;
 	}
     /**
      * Разность
      */
-	public void subtract (double first, double second) {
+	public void subtract(double first, double second) {
 		this.result = first - second;
 	}
     /**
      * Деление
      */
-	public void div (double first, double second) {
+	public void div(double first, double second) {
 		this.result = first / second;
-	}
+		}
     /**
      * Умножение
      */
-	public void multiple (double first, double second) {
+	public void multiple(double first, double second) {
 		this.result = first * second;
 	}
     /**
@@ -36,6 +36,6 @@ public class Calculator {
      */
     public double getResult() {
         return this.result;
-    }
+		}
 }
 

@@ -1,5 +1,7 @@
 package ru.job4j.max;
 
+import org.junit.Test;
+
 public class MaxTest {
 	/**
      * Тест Max

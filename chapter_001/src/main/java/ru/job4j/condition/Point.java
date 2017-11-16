@@ -5,18 +5,23 @@ public class Point {
 	private int y;
 
 	public Point(int x, int y) {
-	  this.x = x;
-	  this.y = y;
+		this.x = x;
+		this.y = y;
 	}
-	public int getX() {
-	  return this.x;
-	}
-	public int getY() {
-	 return this.y;
-	}
-	public boolean is(int a, int b) {
-		if (Point = a * x + b) return true;
 
+	public int getX() {
+		return this.x;
+	}
+
+	public int getY() {
+		return this.y;
+	}
+
+	public boolean is(int a, int b) {
+		if(this.y == this.x * a + b) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
-

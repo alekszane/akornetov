@@ -1,5 +1,8 @@
 package ru.job4j.condition;
 
+import org.junit.Test;
+import static com.sun.org.apache.xerces.internal.util.FeatureState.is;
+
 public class PointTest {
     @Test
     public void whenPointOnLineThenTrue() {
@@ -10,4 +13,5 @@ public class PointTest {
         // assert result by excepted value.
         assertThat(rsl, is(true));
    }
+
 }
