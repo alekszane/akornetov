@@ -20,7 +20,7 @@ public class Triangle {
      * @return расстояние между точками left и right.
      */
     public double distance(Point left, Point right) {
-        return Math.sqrt((x.this.b - x.this.a)^2 + (y.this.b - y.this.a)^2);
+        return Math.sqrt((x: this.b - x: this.a)^2 + (y: this.b - y:this.a)^2);
     }
     /** Метод вычисления периметра по длинам сторон
     * @param ab расстояние между точками a b
@@ -29,7 +29,7 @@ public class Triangle {
     * @return Периметр.
     */
     public double period(double ab, double ac, double bc) {
-        return -1;
+        return (this.a * this.b + this.a * this.c + this.b * this.c) / 2;
     }
     /*
      * Метод должен вычислить прощадь треугольника.
