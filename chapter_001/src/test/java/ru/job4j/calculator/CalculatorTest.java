@@ -17,16 +17,16 @@ public class CalculatorTest {
     @Test
     public void whenSubtractOneMinusOneThenTwo() {
         Calculator calc = new Calculator();
-        calc.subtract(1D, 1D);
+        calc.subtract(2D, 1D);
         double result = calc.getResult();
-        double expected = 2D;
+        double expected = 1D;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenDivOneDelimOneThenTwo() {
         Calculator calc = new Calculator();
-        calc.div(1D, 1D);
+        calc.div(4D, 2D);
         double result = calc.getResult();
         double expected = 2D;
         assertThat(result, is(expected));
@@ -35,9 +35,9 @@ public class CalculatorTest {
     @Test
     public void whenMultipleOneYmnozaemOneThenTwo() {
         Calculator calc = new Calculator();
-        calc.multiple(1D, 1D);
+        calc.multiple(2D, 2D);
         double result = calc.getResult();
-        double expected = 2D;
+        double expected = 4D;
         assertThat(result, is(expected));
     }
 }
