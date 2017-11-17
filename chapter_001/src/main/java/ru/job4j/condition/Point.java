@@ -1,8 +1,8 @@
 package ru.job4j.condition;
 
 public class Point {
-	private int x;
-	private int y;
+	public int x;
+	public int y;
 
 	public Point(int x, int y) {
 		this.x = x;
@@ -17,7 +17,6 @@ public class Point {
 		return this.y;
 	}
 
-	public boolean is(int a, int b) {
-        return (this.y == this.x * a + b) ? true : false;
-		}
-	}
+	public boolean is(int a, int b) {return true;}//(this.y == this.x * a + b) ? true : false;}
+}
+
