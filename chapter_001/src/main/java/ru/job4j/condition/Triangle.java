@@ -8,7 +8,7 @@ public class Triangle {
     private Point b;
     private Point c;
     // Определяем точки
-    public Triangle (Point a, Point b, Point c) {
+    public Triangle(Point a, Point b, Point c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -20,7 +20,7 @@ public class Triangle {
      */
     public double distance(Point left, Point right) {
         return Math.sqrt(
-                Math.pow(left.getX() - right.getX()) + Math.pow(left.getY() - right.getY()));
+                Math.pow(left.getX() - right.getX(), 2) + Math.pow(left.getY() - right.getY(), 2));
     }
     /** Метод вычисления периметра по длинам сторон
      * @param ab расстояние между точками a b
@@ -29,7 +29,7 @@ public class Triangle {
      * @return Периметр.
      */
     public double period(double ab, double ac, double bc) {
-        return (ab + ac +bc) / 2;
+        return (ab + ac + bc) / 2;
     }
     /*
      * Метод должен вычислить прощадь треугольника.
@@ -43,7 +43,7 @@ public class Triangle {
         double p = this.period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
             //  формула для расчета площади треугольника.
-            rsl = Math.sqrt( p *(p - ab) * (p - ac) * (p - bc));
+			rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;
     }
@@ -56,10 +56,10 @@ public class Triangle {
      * @return
     */
     private boolean exist(double ab, double ac, double bc) {
-        if(ab + ac > bc && ac + bc > ab && ab + bc > ac && ab > 0 && ac > 0 && bc > 0){
+        if (ab + ac > bc || ac + bc > ab || bc + ab > ac) {
             return true;
-        }else{
-            return false;
         }
+        return false;
     }
+
 }
