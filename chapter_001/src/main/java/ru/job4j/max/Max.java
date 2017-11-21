@@ -7,7 +7,6 @@ public class Max {
     }
     //Метод возвращает максимум из 3-х чисел
    public int max(int first, int second, int third) {
-        int res = max(third, max(first, second));
-        return res;
+       return max(third, max(first, second));
         }
     }
