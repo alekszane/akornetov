@@ -29,7 +29,6 @@ public class Triangle {
         return Math.sqrt(
                 Math.pow(left.getX() - right.getX(), 2) + Math.pow(left.getY() - right.getY(), 2));
     }
-
     /**
      * Метод вычисления периметра по длинам сторон
      *
