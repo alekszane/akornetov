@@ -8,7 +8,7 @@ import static org.hamcrest.collection.IsArrayContainingInAnyOrder.arrayContainin
 public class ArrayDuplicateTest {
     @Test
     public void whenRemoveDuplicatesThenArrayWithoutDuplicate() {
-        //напишите здесь тест, проверяющий удаление дубликатов строк из массива строк.
+        // тест, проверяющий удаление дубликатов строк из массива строк.
         String[] input = {"Привет", "Мир", "Привет", "Супер", "Мир"};
         String[] out = {"Привет", "Мир", "Супер"};
         ArrayDuplicate duplicate = new ArrayDuplicate();
@@ -17,7 +17,7 @@ public class ArrayDuplicateTest {
     }
     @Test
     public void whenArrayAllDuplicatesThenDropIt() {
-        //напишите здесь тест, проверяющий удаление дубликатов строк из массива строк.
+        //тест, проверяющий удаление одинаковых дубликатов строк из массива строк.
         String[] input = {"1", "1", "1", "1", "1"};
         String[] except = {"1"};
         ArrayDuplicate duplicate = new ArrayDuplicate();
