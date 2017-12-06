@@ -14,7 +14,6 @@ public class Calculate {
 		System.out.println("Hello World!!!");
 		
 	}
-	
 /**
 * Method echo.
 * @param name Your name.

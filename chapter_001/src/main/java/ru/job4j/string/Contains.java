@@ -2,12 +2,11 @@ package ru.job4j.string;
 /**
  * Created by All on 04.12.2017.
  */
-
 public class Contains {
 	/**
-	 * @param origin
-	 * @param sub
-	 * @return true
+	 * @param origin оригинальная строка.
+	 * @param sub строка в строке.
+	 * @return true.
 	 */
 	boolean contains(String origin, String sub) {
 		char[] arrayOrigin = origin.toCharArray();
@@ -15,11 +14,9 @@ public class Contains {
 		boolean result = false;
 
 		for (int i = 0; i < arrayOrigin.length; i++) {
-			//если совпал первый элемент arraySub.
-			if (arrayOrigin[i] == arraySub[0]) {
 				int s;
 				for (s = 0; s < arraySub.length; s++) {
-					if (arraySub[s] != arrayOrigin[i+s]){
+					if (arraySub[s] != arrayOrigin[i + s]) {
 						break;
 					}
 				}
@@ -29,7 +26,6 @@ public class Contains {
 					break;
 				}
 			}
-		}
 		return result;
 	}
 }
