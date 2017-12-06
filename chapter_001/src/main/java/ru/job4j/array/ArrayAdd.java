@@ -3,6 +3,12 @@ package ru.job4j.array;
 /**
  * Created by All on 07.12.2017.
  */
+
+/**
+ * @param array
+ * @param  value
+ * @return newAraay
+ */
 public class ArrayAdd {
 	public int[] addElement(int[] array, int value) {
 		int[] newArray = new int[array.length + 1];
