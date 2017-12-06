@@ -22,7 +22,7 @@ public class ContainsTest {
 	@Test
 	public void whenStringOriginContainIncludeStringSubNewThenFalse() {
 		Contains stringContains = new Contains();
-		boolean rsl = stringContains.contains("ab cd ef g", "xy");
+		boolean rsl = stringContains.contains("ab cd ef g", "xz");
 		assertThat(rsl, is(false));
 	}
 
