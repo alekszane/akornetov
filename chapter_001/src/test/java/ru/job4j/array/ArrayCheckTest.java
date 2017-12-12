@@ -11,12 +11,12 @@ public class ArrayCheckTest {
 	@Test
 	public void whenArrayCheckWithNineElementsThenTrue() {
 		ArrayCheck array = new ArrayCheck();
-		assertThat(array.isSorted(new int[]{0, 1, 2, 3, 4, 5, 5, 7, 8}), is(true));
+		assertThat(array.isSorted(new int[]{0, 1, 2, 3, 4, 5, 5, 7, 8}, false), is(true));
 	}
 	@Test
 	public void whenArrayCheckWithNineElementsThenFalse() {
 		ArrayCheck array = new ArrayCheck();
-		assertThat(array.isSorted(new int[]{0, 4, 2, 9, 3, 10, 1, 7, 5}), is(false));
+		assertThat(array.isSorted(new int[]{0, 4, 2, 9, 3, 10, 1, 7, 5}, false), is(false));
 	}
 
 
