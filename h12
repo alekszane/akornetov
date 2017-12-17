@@ -1,0 +1,19 @@
+[33m2867d4e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m39d2db8[m HEAD@{1}: reset: moving to HEAD~1
+[33m767f89c[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{2}: reset: moving to HEAD~1
+[33m1e5ad73[m HEAD@{3}: commit: Создание классов профессий, наследование
+[33m767f89c[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{4}: commit: Рефакторинг
+[33m39d2db8[m HEAD@{5}: commit: + License
+[33m2867d4e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{6}: commit: Убрал множественные ретурны
+[33mf75dc03[m[33m ([m[1;32morigin[m[33m)[m HEAD@{7}: checkout: moving from origin to master
+[33mf75dc03[m[33m ([m[1;32morigin[m[33m)[m HEAD@{8}: checkout: moving from master to origin
+[33mf75dc03[m[33m ([m[1;32morigin[m[33m)[m HEAD@{9}: commit: Убрал ненужное условие
+[33me88b674[m HEAD@{10}: commit: Проверка: отсортировал ли массив?
+[33m7266c69[m HEAD@{11}: reset: moving to HEAD
+[33m7266c69[m HEAD@{12}: commit: Проверка: отсортирован массив или нет?
+[33m564ec78[m HEAD@{13}: commit: Ignore XML
+[33m79d10e8[m HEAD@{14}: commit: Добавление проверки сортировки массива
+[33md6e44ad[m HEAD@{15}: commit: Возврат
+[33m233f7ca[m HEAD@{16}: reset: moving to HEAD
+[33m233f7ca[m HEAD@{17}: pull origin master: Fast-forward
+[33mc366cab[m HEAD@{18}: pull master master: Merge made by the 'recursive' strategy.
