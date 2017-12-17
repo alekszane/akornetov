@@ -10,12 +10,15 @@ public String scheme; //Чертеж
         super(name, education, age);
         this.scheme = scheme;
     }
-
+    /** Инженер обслуживает механизм.
+     *@param machine Пациент.
+     *@return result String результат.
+     */
     public String servesMachine(Machine machine) {
         String res = "Инженер " + this.name + " обслуживает " + machine.getName();
         return res;
     }
-
+    /* Инженер изучает чертеж*/
     public String studyScheme(String scheme) {
         return this.scheme;
     }

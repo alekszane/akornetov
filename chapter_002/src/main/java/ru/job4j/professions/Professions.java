@@ -7,7 +7,7 @@ public class Professions {
     public String education; // Образование
     public int age; // Возраст
 
-    public Professions(String name, String education, int age) {
+    public Professions(String name, String education, int age) { // Создаем конструктор
         this.name = name;
         this.education = education;
         this.age = age;

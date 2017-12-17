@@ -11,8 +11,8 @@ public class Doctor extends Professions {
     this.illness = illness;
    }
    /** Доктор лечит пациента.
-   *@param pacient Пациент
-   *@return result результат действия
+   *@param pacient Пациент.
+   *@return result String результат действия.
    */
    public String treatPatients(Pacient pacient) {
       String result = "Доктор " + this.name + " лечит " +  pacient.getName();
