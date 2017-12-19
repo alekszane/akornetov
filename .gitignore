@@ -25,3 +25,11 @@ target
 .idea
 *.iml
 *.xml
+_windows
+checkstyle.xml
+codestyles
+databaseSettings.xml
+debugger.xml
+editor.xml
+github_settings.xml
+ui.lnf.xml
