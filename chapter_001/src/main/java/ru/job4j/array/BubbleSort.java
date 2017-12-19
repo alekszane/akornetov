@@ -15,7 +15,7 @@ public class BubbleSort {
 					sort = false;
 				}
 			}
-			if(sort) { //Если отсортирован, тогда выходим из цикла
+			if (sort) { //Если отсортирован, тогда выходим из цикла
 				break;
 			}
 		}
