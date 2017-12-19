@@ -13,4 +13,5 @@ public class TeacherTest {
         Student student = new Student("Петрова", 25);
         assertThat(teach.teachStudents(student), is("Учитель Коржиков учит Петрова лекции 1"));
     }
+
 }

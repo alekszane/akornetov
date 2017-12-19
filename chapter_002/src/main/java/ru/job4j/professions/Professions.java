@@ -3,9 +3,9 @@ package ru.job4j.professions;
  * Created by All on 15.12.2017.
  */
 public class Professions {
-    public String name; //Имя
-    public String education; // Образование
-    public int age; // Возраст
+    private String name; //Имя
+    private String education; // Образование
+    private int age; // Возраст
 
     public Professions(String name, String education, int age) { // Создаем конструктор
         this.name = name;
@@ -17,6 +17,9 @@ public class Professions {
         return this.name;
     }
 
+    public String setName(String name) {
+        return name;
+    }
     public String getEducation() {
         return this.education;
     }

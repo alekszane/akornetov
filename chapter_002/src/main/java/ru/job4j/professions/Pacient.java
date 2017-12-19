@@ -5,8 +5,8 @@ package ru.job4j.professions;
  */
 public class Pacient {
 
-    public String name;
-    public int age;
+    private String name;
+    private int age;
 
     public Pacient(String name, int age) {
         this.name = name;

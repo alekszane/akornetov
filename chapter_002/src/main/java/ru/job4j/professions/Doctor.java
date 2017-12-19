@@ -14,12 +14,11 @@ public class Doctor extends Professions {
    *@param pacient Пациент.
    *@return result String результат действия.
    */
-   public String treatPatients(Pacient pacient) {
-      String result = "Доктор " + this.name + " лечит " +  pacient.getName();
-      return result;
+   protected String treatPatients(Pacient pacient) {
+      return String.format("Доктор %s лечит %s", this.getName(), pacient.getName());
    }
    /* Доктор определяет болезнь.*/
-   public String whatIsWrong(String illness) {
+   protected String whatIsWrong(String illness) {
       return this.illness;
    }
 }

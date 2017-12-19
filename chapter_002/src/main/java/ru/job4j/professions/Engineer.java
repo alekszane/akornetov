@@ -4,22 +4,21 @@ package ru.job4j.professions;
  */
 public class Engineer extends Professions {
 
-public String scheme; //Чертеж
+private String scheme; //Чертеж
 
     public Engineer(String name, String education, int age, String scheme) {
         super(name, education, age);
         this.scheme = scheme;
     }
     /** Инженер обслуживает механизм.
-     *@param machine Пациент.
-     *@return result String результат.
+     *@param machine Механизм.
+     *@return String результат.
      */
-    public String servesMachine(Machine machine) {
-        String res = "Инженер " + this.name + " обслуживает " + machine.getName();
-        return res;
+    protected String servesMachine(Machine machine) {
+        return String.format("Инженер %s обслуживает %s", this.getName(), machine.getName());
     }
     /* Инженер изучает чертеж*/
-    public String studyScheme(String scheme) {
+    protected String studyScheme(String scheme) {
         return this.scheme;
     }
 }

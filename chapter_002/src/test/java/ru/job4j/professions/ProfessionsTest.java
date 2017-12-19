@@ -11,5 +11,10 @@ public class ProfessionsTest {
        Professions profession = new Professions("Имя ", "Образование", 29);
         assertThat(profession.getName(), is("Имя "));
     }
+    @Test
+    public void whenProfessionInterNameThenSetName() {
+        Professions profession = new Professions("Имя ", "Образование", 29);
+        assertThat(profession.setName("Вася"), is("Вася"));
+    }
 
 }

@@ -4,18 +4,18 @@ package ru.job4j.professions;
  */
 public class Teacher extends Professions {
 
-    public int numberLesson; // номер лекции.
+    private int numberLesson; // номер лекции.
 
     public Teacher(String name, String education, int age, int numberLesson) {
         super(name, education, age);
         this.numberLesson = numberLesson;
     }
+
     /** Учитель учит студента лекции.
-     *@param student Пациент.
-     *@return result String результат.
+     *@param student Студент.
+     *@return String результат.
      */
-    public String teachStudents(Student student) {
-        String res = "Учитель " + this.getName() + " учит " + student.getName() + " лекции " + this.numberLesson;
-        return res;
+    protected String teachStudents(Student student) {
+        return String.format("Учитель %s учит %s лекции %s", this.getName(), student.getName(), this.numberLesson);
     }
 }
