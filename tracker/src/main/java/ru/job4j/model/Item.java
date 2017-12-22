@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package ru.job4j.model;
 /**
  * Created by All on 21.12.2017.
  */

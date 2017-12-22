@@ -1,4 +1,5 @@
-package ru.job4j.tracker;
+package ru.job4j.start;
+import ru.job4j.model.Item;
 import java.util.Random;
 /**
  * Created by All on 21.12.2017.
@@ -9,7 +10,7 @@ public class Tracker {
      //* Указатель ячейки для новой заявки.
     private int position = 0;
     //* в константу rn помещаем слуайное число
-    private static final Random rn = new Random();
+    private static Random rn = new Random();
 
     /**
      * Метод реализаущий добавление заявки в хранилище
@@ -27,7 +28,7 @@ public class Tracker {
      */
     private String generateId() {
         // Метод генерации ID.
-        return String.valueOf(rn.nextInt());
+        return String.valueOf(rn.nextInt(100));
     }
     /**
     *Метод замениет ячейку в массиве this.items
@@ -38,11 +39,15 @@ public class Tracker {
     // должен удалить ячейку в массиве this.items. Для этого необходимо найти ячейку в массиве по id.
     //Далее сместить все значения справа от удаляемого элемента - на одну ячейку влево с помощью System.arrayCopy()
     public void delete(String id) {
-
-        for(int ind = 0;  ) {
-
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                Item[] itemdel = new Item[100];
+                System.arraycopy(items, 1, itemdel, 0, 1);
+                System.arraycopy(itemdel, 0, items, 0, 1);
+                position --;
+                break;
+            }
         }
-        return
     }
     // возвращает копию массива this.items без null элементов;
     public Item[] findAll() {
