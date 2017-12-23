@@ -3,7 +3,7 @@ package ru.job4j.model;
  * Created by All on 21.12.2017.
  */
 public class Item {
-    private String id; //
+    private String id; //  ID заявки
     private String name; //
     private String desc; //
     private Long created; //
