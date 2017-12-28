@@ -3,13 +3,11 @@ package ru.job4j.model;
  * Created by All on 21.12.2017.
  */
 public class Item {
-    public String id; //  ID заявки
-    public String name; // Имя заявки
-    public String desc; // Описание заявки
-    public long created; // Дата создания заявки
+    private String id; //  ID заявки
+    private String name; // Имя заявки
+    private String desc; // Описание заявки
+    private long created; // Дата создания заявки
     private String comment; // Комментарий к заявке
-
-
 
     public Item(String name, String desc, long created) { // Создаем Конструктор
         this.name = name;
@@ -17,7 +15,6 @@ public class Item {
         this.created = created;
     }
     public Item() { }  // конструктор без параметров по умолчанию
-
 
     /***Геттеры и сеттеры***/
     public String getId() { //Возвращает Id
