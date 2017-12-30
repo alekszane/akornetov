@@ -44,16 +44,16 @@ public class StartUI {
             String answer = this.input.ask("Введите пункт меню : ");
             if (ADD.equals(answer)) {
                 this.createItem(); //добавление заявки вынесено в отдельный метод.
-            }else if (SHOW.equals(answer)){
+            } else if (SHOW.equals(answer)) {
                 this.show();
-            }else if (EDIT.equals(answer)){
+            } else if (EDIT.equals(answer)) {
                 this.edit();
-            }else if (DELETE.equals(answer)) {
+            } else if (DELETE.equals(answer)) {
                 this.delete();
-            }else if (FINDBYID.equals(answer)) { // поиск будет  идти через имя объекта т.к пользователь не знает id
+            } else if (FINDBYID.equals(answer)) { // поиск будет  идти через имя объекта т.к пользователь не знает id
                 this.findById();
-            }else if (FINDBYNAME.equals(answer)) {
-                this.Name();
+            }  else if (FINDBYNAME.equals(answer)) {
+                this.name();
             } else if (EXIT.equals(answer)) {
                 exit = true;
             }
@@ -64,7 +64,7 @@ public class StartUI {
      * Метод реализует добавление новый заявки в хранилище.
      */
     private void createItem() {
-        System.out.println("------------ Добавление новой языки --------------");
+        System.out.println("------------ Добавление новой заявки --------------");
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите опиание заявки :");
         Item item = new Item(name, desc, 1);
@@ -80,14 +80,14 @@ public class StartUI {
         Item[] edit2 = tracker.findByName(name);
         String name1 = input.ask("Введите имя новой заяки");
         String desc = input.ask("Введите описание новой заявки");
-        Item item = new Item(name1,desc,2);
-        for(Item item1:edit2){
-            if((item1.getName()).equals(name)) {
-                Item [] result = tracker.replace((item1.getId()),item);
+        Item item = new Item(name1, desc, 2);
+        for (Item item1:edit2) {
+            if ((item1.getName()).equals(name)) {
+                Item[] result = tracker.replace((item1.getId()), item);
                 break;
             }
         }
-        System.out.println("Заявка  " +item.getName() + "   отредактирована");
+        System.out.println("Заявка  " + item.getName() + "   отредактирована");
     }
 
     public void delete() {
@@ -103,7 +103,7 @@ public class StartUI {
         }
     }
 
-    public void findById(){
+    public void findById() {
         System.out.println("Поиск объекта по его id");  //поиск идет через имя заявки тк клиент не знает id заявки
         String name = input.ask("Введите имя объекта");
         Item[] find1 = tracker.findByName(name);
@@ -116,7 +116,7 @@ public class StartUI {
         }
     }
 
-    public void Name() {
+    public void name() {
         System.out.println("Поиск объекта по его имени");
         String name = input.ask("Введите имя объекта");
         Item[] find = tracker.findByName(name);
@@ -129,9 +129,9 @@ public class StartUI {
     }
 
     public void show() {
-        System.out.println("Вывод всех заявок" );
-        Item [] array = tracker.getAll();
-        for(int i = 0; i < array.length; i++) {
+        System.out.println("Вывод всех заявок");
+        Item[] array = tracker.getAll();
+        for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
     }
@@ -141,11 +141,10 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-       // StartUI ui = new StartUI(new ConsoleInput(), new Tracker()).init();
         System.out.println("Вход в меню");
         ConsoleInput consol = new ConsoleInput();
         Tracker tracker = new Tracker();
-        StartUI start = new StartUI(consol,tracker);
+        StartUI start = new StartUI(consol, tracker);
         start.init();
         System.out.println("Вы вышли из меню");
     }

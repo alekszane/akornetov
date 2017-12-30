@@ -9,7 +9,7 @@ public class StubInput implements Input {
 
     public StubInput(String[] answers) {
         this.answers = answers;
-    }
+    } // конструктор Stub Input
 
     public String ask(String question) {
         String a = "6";

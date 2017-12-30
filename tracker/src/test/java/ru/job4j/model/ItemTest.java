@@ -1,4 +1,4 @@
-package ru.job4j.model;
+package java.job4j.model;
 import ru.job4j.model.Item;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

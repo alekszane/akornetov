@@ -1,9 +1,9 @@
-package java.ru.job4j.start;
+package ru.job4j.start;
 
 import org.junit.Test;
-import ru.job4j.model.Item;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import ru.job4j.model.Item;
 import ru.job4j.start.Input;
 import ru.job4j.start.StartUI;
 import ru.job4j.start.StubInput;
@@ -19,16 +19,16 @@ public class StartUITest {
         tracker.add(item);
         return tracker;
     }
-
+// Метод тестирует добавление заявки пользователем
     @Test
-    public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
+    public void whenUserAddItemThenTrackerHasNewItemWithNewName() {
         Tracker tracker = new Tracker();
-        String[]one = {"0", "name1", "desc1", "1"};
+        String[]one = {"0", "name", "desc", "1"};
         Input input = new StubInput(one);
         new StartUI(input, tracker).init();
-        assertThat(tracker.getAll()[0].getName(), is("name1"));
+        assertThat(tracker.getAll()[0].getName(), is("name"));
     }
-
+    // Метод тестирует изменение полей заявки
     @Test
     public void whenUpdateThenTrackerUpdateValue() {
         Tracker tracker = new Tracker();
