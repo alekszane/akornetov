@@ -89,7 +89,9 @@ public class StartUI {
         }
         System.out.println("Заявка  " + item.getName() + "   отредактирована");
     }
-
+    /**
+     * Метод реализует удаление заявки в хранилище.
+     */
     public void delete() {
         System.out.println("Удаляем заявку");
         String name = input.ask("Введите имя удаляемой заявки");
@@ -102,7 +104,9 @@ public class StartUI {
             }
         }
     }
-
+    /**
+     * Метод реализует поиск объекта по его id.
+     */
     public void findById() {
         System.out.println("Поиск объекта по его id");  //поиск идет через имя заявки тк клиент не знает id заявки
         String name = input.ask("Введите имя объекта");
@@ -115,7 +119,9 @@ public class StartUI {
             }
         }
     }
-
+    /**
+     * Метод реализует поиск объекта по его имени.
+     */
     public void name() {
         System.out.println("Поиск объекта по его имени");
         String name = input.ask("Введите имя объекта");
@@ -127,7 +133,9 @@ public class StartUI {
             }
         }
     }
-
+    /**
+     * Метод реализует Вывод всех заявок.
+     */
     public void show() {
         System.out.println("Вывод всех заявок");
         Item[] array = tracker.getAll();
@@ -137,15 +145,10 @@ public class StartUI {
     }
 
     /**
-     * Запускт программы.
+     * Запуск программы.
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Вход в меню");
-        ConsoleInput consol = new ConsoleInput();
-        Tracker tracker = new Tracker();
-        StartUI start = new StartUI(consol, tracker);
-        start.init();
-        System.out.println("Вы вышли из меню");
+        new StartUI(new ConsoleInput(), new Tracker()).init();
     }
 }
