@@ -24,7 +24,6 @@ hs_err_pid*
 target
 .idea
 *.iml
-*.xml
 _windows
 checkstyle.xml
 codestyles

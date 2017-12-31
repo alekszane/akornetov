@@ -57,7 +57,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenAddItemAndFindById() { // я ищу заявку по имени тк пользователь не знает id
+    public void whenAddItemAndFindById() { // ищем заявку по имени тк пользователь не знает id
         Tracker tracker = new Tracker();
         Item item = new Item("name6", "desc6", 6);
         tracker.add(item);
