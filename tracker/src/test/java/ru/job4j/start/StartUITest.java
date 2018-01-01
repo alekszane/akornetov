@@ -43,7 +43,6 @@ public class StartUITest {
         Input input1 = new StubInput(new String[]{"3", "name4"});
         new StartUI(input1, tracker).init();
         assertThat(tracker.getAll()[0].getName(), is("name5"));
-
     }
 
     @Test
