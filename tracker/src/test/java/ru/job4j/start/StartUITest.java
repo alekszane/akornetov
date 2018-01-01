@@ -22,7 +22,7 @@ public class StartUITest {
         new StartUI(input, tracker).init(); // создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
-    // Метод тестирует изменение полей заявки
+    // Метод тестирует редактирование полей заявки пользователем
     @Test
     public void whenUpdateThenTrackerUpdateValue() {
         Tracker tracker = new Tracker(); // создаём Tracker
@@ -32,7 +32,7 @@ public class StartUITest {
         new StartUI(input, tracker).init();  // создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
-
+    // Тестируем удаление заявки пользователем
     @Test
     public void whenAddItemAndThenDeleteItem() {
         Tracker tracker = new Tracker();
@@ -44,7 +44,7 @@ public class StartUITest {
         new StartUI(input1, tracker).init();
         assertThat(tracker.getAll()[0].getName(), is("name5"));
     }
-
+    // Тестируем поиск по ID заявки пользователем
     @Test
     public void whenAddItemAndFindById() { // ищем заявку по имени тк пользователь не знает id
         Tracker tracker = new Tracker();
@@ -54,27 +54,7 @@ public class StartUITest {
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll()[0].getName(), is("name6"));
     }
-
-    @Test
-    public void whenAddItemAndFindByName() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("name7", "desc7", 7);
-        tracker.add(item);
-        Input input = new StubInput(new String[]{"5", "name7"});
-        new StartUI(input, tracker).init();
-        assertThat(tracker.getAll()[0].getName(), is("name7"));
-    }
-
-    @Test
-    public void whenAddItemAndEditItem() {
-        Item item = new Item("name2", "desc2", 2);
-        Item item2 = new Item("name3", "desc3", 3);
-        this.createAndAdd(item);
-        Input input = new StubInput(new String[]{"2", "name2", "name3", "desc3"});
-        new StartUI(input, this.createAndAdd(item)).init();
-        assertThat(this.createAndAdd(item2).getAll()[0].getName(), is("name3"));
-    }
-
+    // Тестируем поиск по name заявки пользователем
     @Test
     public void whenAddItemAndShowItemByName() {
         Item item = new Item("name2", "desc2", 9);
