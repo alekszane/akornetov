@@ -11,10 +11,11 @@ import java.io.PrintStream;
  * Created on 03.01.2018.
  */
 public class SquareTest {
+String ls = System.lineSeparator();
 	@Test
 	public void whenDrawSquare() { //Тестируем отрисовку квадрата c выводом в память.
 		PrintStream stdout = System.out; // получаем ссылку на стандартный вывод в консоль.
-		ByteArrayOutputStream out = new ByteArrayOutputStream(); // Создаем буфур для хранения вывода.
+		ByteArrayOutputStream out = new ByteArrayOutputStream(); // Создаем буфер для хранения вывода.
 		System.setOut(new PrintStream(out)); //Заменяем стандартный вывод на вывод в пямять для тестирования.
 		new Paint().draw(new Square()); // выполняем действия пишушиее в консоль.
 		// проверяем результат вычисления
@@ -22,12 +23,17 @@ public class SquareTest {
 				new String(out.toByteArray()),
 			is(
 				new StringBuilder()
-					.append("++++\n")
-					.append("+  +\n")
-					.append("+  +\n")
-					.append("++++\r\n")
+					.append("++++")
+					.append(ls)
+					.append("+  +")
+					.append(ls)
+					.append("+  +")
+					.append(ls)
+					.append("++++")
+					.append(ls)
 					.toString()
 			)
 		);
+		System.setOut(stdout);
 	}
 }
