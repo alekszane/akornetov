@@ -31,25 +31,21 @@ public class PaintTest {
 
 	@Test
 	public void whenDrawSquare() {
-		String ls = System.lineSeparator(); //Строка lineSeparator
 		new Paint().draw(new Square()); // выполняем действия пишушиее в консоль.
 		// проверяем результат вычисления
 		assertThat(
 			new String(out.toByteArray()),
 			is(
-				new StringBuilder()
-					.append("++++")
-					.append(ls)
-					.append("+  +")
-					.append(ls)
-					.append("+  +")
-					.append(ls)
-					.append("++++")
-					.append(ls)
+			new StringJoiner(
+					System.lineSeparator(), "",
+					System.lineSeparator())
+					.add("++++")
+					.add("+  +")
+					.add("+  +")
+					.add("++++")
 					.toString()
 			)
 		);
-		System.setOut(stdout);
 	}
 	@Test
 	public void whenDrawTriangle() {
@@ -67,6 +63,5 @@ public class PaintTest {
 					.toString()
 			)
 		);
-		System.setOut(stdout);
 	}
 }

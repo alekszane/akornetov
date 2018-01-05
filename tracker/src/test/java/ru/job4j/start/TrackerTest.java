@@ -10,6 +10,7 @@ import static org.junit.Assert.assertThat;
  * Created by All on 21.12.2017.
  */
 public class TrackerTest {
+    private final Tracker tracker = new Tracker();
     @Test
     public void addTest() {
         Tracker tracker = new Tracker();

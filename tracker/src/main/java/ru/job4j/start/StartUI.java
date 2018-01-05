@@ -24,7 +24,7 @@ public class StartUI {
     }
     // Метод Выводит в консоль пункты меню.
     private void showMenu() {
-        System.out.println("Menu");
+        System.out.println("Menu"); // Пункт меню для добавления новой заявки.
         System.out.println("Add menu item enter 0");
         System.out.println("Show all items - enter 1");
         System.out.println("Edit item - enter 2");

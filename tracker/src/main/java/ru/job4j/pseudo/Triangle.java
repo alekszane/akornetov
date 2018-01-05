@@ -5,15 +5,14 @@ import java.util.StringJoiner;
  * Created by All on 03.01.2018.
  */
 public class Triangle implements Shape {
-String br = System.lineSeparator();
+String ls = System.lineSeparator();
     @Override
     public String draw() {
         StringBuilder pic = new StringBuilder();
-        StringJoiner str = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         pic.append("  ^  ");
-        pic.append(br);
+        pic.append(ls);
         pic.append(" ^ ^ ");
-        pic.append(br);
+        pic.append(ls);
         pic.append("^^^^^");
         return pic.toString();
     }

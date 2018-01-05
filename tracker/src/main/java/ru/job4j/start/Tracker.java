@@ -9,6 +9,7 @@ public class Tracker {
     private final Item[] items = new Item[100]; // * Массив для хранения заявок.
     private int position = 0; //* Указатель ячейки для новой заявки.
     private final static Random RAND = new Random(); //* в константу rand помещаем слуайное число.
+    private final String ls = System.lineSeparator();
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
