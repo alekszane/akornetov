@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 public class ItemTest {
     @Test
     public void whenItemNameThenGetName() {
-        Item item = new Item("name2", "item2", 10);
+        Item item = new Item();
         assertThat(item.getName(), is("name2"));
     }
 }

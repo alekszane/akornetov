@@ -9,7 +9,6 @@ public class Tracker {
     private final Item[] items = new Item[100]; // * Массив для хранения заявок.
     private int position = 0; //* Указатель ячейки для новой заявки.
     private final static Random RAND = new Random(); //* в константу rand помещаем слуайное число.
-    private final String ls = System.lineSeparator();
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
@@ -32,6 +31,18 @@ public class Tracker {
         }
         return result;
     }
+    /**Метод реализаущий редактирование заявки пользователем.
+    */
+    public void edit(Item fresh) {
+        for (int index = 0; index < items.length; index++) {
+            Item item = items[index];
+            if (item != null && item.getId().equals(fresh.getId())) {
+                items [index] = fresh;
+                break;
+            }
+        }
+    }
+
   /**Метод  реализующий редактирование заявки в хранилище(замениет ячейку в массиве this.items).
   *@param id
   *@param item
@@ -104,7 +115,6 @@ public class Tracker {
  @return res;
 */
     public Item findById(String id) {
-        int x = 0;
         Item res = null;
         for (Item item : items) {
             if (item.getId().equals(id) && item != null) {
@@ -124,4 +134,5 @@ public class Tracker {
         }
         return all;
     }
+
 }

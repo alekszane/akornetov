@@ -6,8 +6,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import ru.job4j.model.Item;
 
-import java.io.PrintStream;
-import java.util.Arrays;
 
 /**
  * Created by All on 29.12.2017.
