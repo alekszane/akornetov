@@ -38,13 +38,13 @@ public class MenuTracker {
 	}
 
 	public  void fillActions() {
-		this.actions[0] = this.new AddItem();
-		this.actions[1] = new MenuTracker.ShowItems();
-		this.actions[2] = new EditItem();
-		this.actions[3] = new DeleteItem();
-		this.actions[4] = new FindItemById();
-		this.actions[5] = new FindItemsByName();
-		this.actions[6] = new Exit();
+		this.actions[0] = this.new AddItem(); //создаем экземпляр внутреннего не статичного класса
+		this.actions[1] = new MenuTracker.ShowItems(); //создаем экземпляр внутреннего статичного класса
+		this.actions[2] = new EditItem(); // создаем экземпляр внешнего класса
+		this.actions[3] = this.new DeleteItem(); // внутренний не статичный класс
+		this.actions[4] = this.new FindItemById(); // внутренний не статичный класс
+		this.actions[5] = this.new FindItemsByName(); // внутренний не статичный класс
+		this.actions[6] = this.new Exit(); // внутренний не статичный класс
 	}
 
 	public void select(int key) { //Метод выполняет действия выбранные пользователем.
@@ -162,6 +162,7 @@ public class MenuTracker {
 		public  void execute(Input input, Tracker tracker) {
 
 			String name = input.ask("input n ");
+			break;
 		}
 
 		public String info() {
