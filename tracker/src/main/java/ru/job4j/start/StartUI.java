@@ -5,17 +5,25 @@ import ru.job4j.model.*;
  */
 public class StartUI {
     private Input input;
-    private  Tracker tracker;
+    private Tracker tracker;
+    private int[] ranges = new  int[6];
     /**
      * Конструтор инициализирующий поля.
      * @param input ввод данных.
-     * @param tracker хранилище заявок.
+     * @param tracker
      */
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }
 
+    public void fillRanges(MenuTracker menu) {  // метод заполняет массив ranges
+
+        UserAction[] ua = menu.getActions();
+        for (int i = 0; i < ua.length; i++) {
+            ranges[i] = i;
+        }
+    }
     /**
      * Основой цикл программы.
      */
@@ -23,11 +31,10 @@ public class StartUI {
         Tracker tracker = new Tracker();
         MenuTracker menu = new MenuTracker(this.input, tracker);
         menu.fillActions();
+        fillRanges(menu);
         do {
             menu.show();
-            int key = Integer.valueOf(input.ask("Select: "));
-            menu.select(key);
-            // menu.select(input.ask("Select", ranges));
+            menu.select(input.ask("Select: ", ranges));
         } while (!"y".equals(this.input.ask("Exit? y : ")));
     }
 
@@ -36,6 +43,6 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(new ConsoleInput()), new Tracker()).init();
     }
 }

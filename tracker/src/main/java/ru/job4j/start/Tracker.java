@@ -22,14 +22,12 @@ public class Tracker {
      * Метод реализаущий добавление заявки в хранилище.
      * @param item новая заявка.
      */
-    public boolean add(Item item) {
-        boolean result = false;
-        if (item != null) {
-            item.setId(generateId());
-            this.items[this.position++] = item;
-            result = true;
-        }
-        return result;
+    public Item add(Item item) {
+
+        item.setId(this.generateId());
+        this.items[position] = item;
+        position++;
+        return item;
     }
     /**Метод реализаущий редактирование заявки пользователем.
     */

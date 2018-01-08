@@ -5,8 +5,8 @@ package ru.job4j.start;
  *         project tracker
  *         Created on 08.01.2018.
  */
-public class MenuOutExeption extends RuntimeException { //Создаем исключение, которое не обрабатывается виртуальной машиной
-	public MenuOutExeption(String message) {
+public class MenuOutException extends RuntimeException { //Создаем исключение, которое не обрабатывается виртуальной машиной
+	public MenuOutException(String message) {
 		super(message);
 	}
 

@@ -28,23 +28,30 @@ import javax.jws.soap.SOAPBinding;
  }
 
 public class MenuTracker {
-	private  Input input;
-	private Tracker tracker;
-	private UserAction[] actions = new UserAction[7]; // В массиве храним номера действий, которые может совершить пользователь
+	private  Input input; //Интерфейс ввода
+	private Tracker tracker; // Трекер
+	//private boolean exit; // Выход
+
+	private UserAction[] actions = new UserAction[6]; // В массиве храним номера действий, которые может совершить пользователь
 
 	public MenuTracker(Input input, Tracker tracker) {
 		this.input = input;
 		this.tracker = tracker;
+		//this.exit = false;
+	}
+
+	public UserAction[] getActions() {
+		return actions;
 	}
 
 	public  void fillActions() {
-		this.actions[0] = this.new AddItem(); //создаем экземпляр внутреннего не статичного класса
+		this.actions[0] = new AddItem(); //создаем экземпляр внутреннего не статичного класса
 		this.actions[1] = new MenuTracker.ShowItems(); //создаем экземпляр внутреннего статичного класса
 		this.actions[2] = new EditItem(); // создаем экземпляр внешнего класса
 		this.actions[3] = this.new DeleteItem(); // внутренний не статичный класс
 		this.actions[4] = this.new FindItemById(); // внутренний не статичный класс
 		this.actions[5] = this.new FindItemsByName(); // внутренний не статичный класс
-		this.actions[6] = this.new Exit(); // внутренний не статичный класс
+		//this.actions[6] = this.new Exit(); // выход из меню
 	}
 
 	public void select(int key) { //Метод выполняет действия выбранные пользователем.
@@ -59,6 +66,10 @@ public class MenuTracker {
 		}
 	}
 
+	/*public boolean exit(){
+		return this.exit;
+	}*/
+
 	private class AddItem implements UserAction { //Внутренний класс реализует добавление заявки.
 
 		public  int key() {
@@ -68,11 +79,11 @@ public class MenuTracker {
 		public  void execute(Input input, Tracker tracker) {
 			String name = input.ask("Please enter the task's name: ");
 			String desc = input.ask("Please enter the desck's name: ");
-			tracker.add(new Task(name, "first desc"));
+			tracker.add(new Task(name, desc));
 		}
 
 		public String info() {
-			return  String.format("%s. %s", this.key(), " Add the new item ");
+			return  String.format("%s. %s", this.key(), " Add the new item");
 		}
 	}
 
@@ -85,6 +96,7 @@ public class MenuTracker {
 		public  void execute(Input input, Tracker tracker) {
 			for (Item item : tracker.getAll()) {
 				System.out.println(String.format("%s. %s", item.getId(), item.getName()));
+				break;
 			}
 		}
 
@@ -106,6 +118,7 @@ public class MenuTracker {
 				if (itm != null && itm.getName().equals(name)) {
 					tracker.delete(itm.getId());
 				}
+				break;
 			}
 		}
 
@@ -145,28 +158,12 @@ public class MenuTracker {
 				if (itm != null && itm.getName().equals(name)) {
 					System.out.println("Task found");
 				}
+				break;
 			}
 		}
 
 		public String info() {
 			return  String.format("%s. %s", this.key(), " Find item by name ");
-		}
-	}
-
-	private class Exit implements UserAction { // Внутренний класс реализует выход из программы.
-
-		public  int key() {
-			return  6;
-		}
-
-		public  void execute(Input input, Tracker tracker) {
-
-			String name = input.ask("input n ");
-			break;
-		}
-
-		public String info() {
-			return  String.format("%s. %s", this.key(), " Exit ");
 		}
 	}
 
