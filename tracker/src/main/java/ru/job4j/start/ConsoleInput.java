@@ -12,7 +12,7 @@ public class ConsoleInput implements Input {
     System.out.print(question);
         return scanner.nextLine();
     }
-
+    @Override
     public int ask(String question, int[] range) {
         int key = Integer.valueOf(this.ask(question));
         boolean exist = false;

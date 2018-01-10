@@ -18,6 +18,7 @@ public class ValidateInput implements Input {
 		return this.input.ask(question);
 	}
 
+	@Override
 	public int ask(String question, int[] range) {
 		boolean invalid = true;
 		int value = -1;

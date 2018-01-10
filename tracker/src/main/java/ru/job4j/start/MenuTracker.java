@@ -36,10 +36,6 @@ public class MenuTracker {
 		this.tracker = tracker;
 	}
 
-	public void AddAction(UserAction action) {
-		this.actions[position++] = action;
-	}
-
 	public UserAction[] getActions() {
 		return actions;
 	}
