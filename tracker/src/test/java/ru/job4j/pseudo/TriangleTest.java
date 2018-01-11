@@ -20,7 +20,7 @@ public class TriangleTest {
 		new Paint().draw(new Triangle()); // выполняем действия пишушиее в консоль.
 		// проверяем результат вычисления
 		assertThat(
-			new String(out.toByteArray()),
+			new String(out.toString()),
 				is(
 					new StringJoiner(
 						System.lineSeparator(), "",

@@ -34,7 +34,7 @@ public class PaintTest {
 		new Paint().draw(new Square()); // выполняем действия пишушиее в консоль.
 		// проверяем результат вычисления
 		assertThat(
-			new String(out.toByteArray()),
+			new String(out.toString()),
 			is(
 			new StringJoiner(
 					System.lineSeparator(), "",
@@ -52,7 +52,7 @@ public class PaintTest {
 		new Paint().draw(new Triangle()); // выполняем действия пишушиее в консоль.
 		// проверяем результат вычисления
 		assertThat(
-			new String(out.toByteArray()),
+			new String(out.toString()),
 			is(
 				new StringJoiner(
 					System.lineSeparator(), "",

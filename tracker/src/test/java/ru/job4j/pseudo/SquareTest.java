@@ -20,7 +20,7 @@ String ls = System.lineSeparator();
 		new Paint().draw(new Square()); // выполняем действия пишушиее в консоль.
 		// проверяем результат вычисления
 		assertThat(
-				new String(out.toByteArray()),
+				new String(out.toString()),
 			is(
 				new StringBuilder()
 					.append("++++")
