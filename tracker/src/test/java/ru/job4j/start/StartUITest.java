@@ -22,7 +22,7 @@ public class StartUITest {
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();
-        Input input = new StubInput(new String[]{"0", "test name", "desc", "6"}); //создаём StubInput с последовательностью действий
+        Input input = new StubInput(new String[]{"0", "test name", "desc", "1"}); //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init(); // создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
@@ -35,7 +35,7 @@ public class StartUITest {
         tracker.add(item);
         Item item1 = new Item("name5", "desc5", 5);
         tracker.add(item1);
-        Input input = new StubInput(new String[]{"1"});
+        Input input = new StubInput(new String[]{"1", "test name"});
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll().length, is(2));
     }
