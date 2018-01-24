@@ -1,21 +1,24 @@
 package ru.job4j.chess.figures;
-import ru.job4j.chess.board.Board;
 import ru.job4j.chess.board.Cell;
+import ru.job4j.chess.extentions.*;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project chapter_002
  *         Created on 17.01.2018.
  */
-public abstract class Figure { //Абстрактный класс, создаем на его основе фигуры.
+public abstract class Figure { //Абстрактный класс, создаем на его основе другие фигуры.
 
-	protected Board board;
+	private final Cell position;
+	protected Cell[][] cells;
+	private String figureName;
 
-	public Figure(Board board) {
-		this.board  = board;
+	public Figure(Cell position) {
+		this.position = position;
 	}
 
-	public abstract Cell[] way(Cell source, Cell dest); // throws ImposibleMoveException, OccupiedWayException;
+	public abstract Cell[] way(Cell source, Cell dest) throws ImposibleMoveException, OccupiedWayException;
 
 	public abstract Figure copy(Cell dest);
+
 }

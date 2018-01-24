@@ -1,4 +1,6 @@
 package ru.job4j.chess.board;
+import ru.job4j.chess.extentions.*;
+import ru.job4j.chess.figures.Figure;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
@@ -7,34 +9,65 @@ package ru.job4j.chess.board;
  */
 public class Board {
 
-	private final int BOARD_CELL = 8; //Размер доски.
+	private Cell source; // Начальная ячейка.
+	private Cell dest; // Конечная ячейка.
+	private Figure[][] figures; //Массив фигур (ячеек).
+	private Figure figure; //Фигура  Слон
 
-	private Cell[][] board = new Cell[BOARD_CELL][BOARD_CELL]; // сама игровая доска.
 
-	private char[] horizontNames = new char[BOARD_CELL]; //Именование ячеек по горизонтали доски.
+	public Board(Cell source, Cell dest, Figure[][] figures, Figure figure) {
+		this.source = source;
+		this.dest = dest;
+		this.figures = figures;
+		this.figure = figure;
+	}
 
-	private char[] vertivalNames = new char[BOARD_CELL]; //Именование ячеек по вертикали доски.
-
-	Board(){
-
-		for(int size = 0; size < this.BOARD_CELL; size++){ //Заполняем массив алфавитом по порядку.
-			this.horizontNames[size] = (char)((int)'a' + size);
+	public void addFigure(Figure figure) {
+		if (figure != null) {
+			this.figure = figure;
 		}
-		for(int size = 0; size < this.BOARD_CELL; size++){ //Заполняем массив номерами по порядку.
-			this.vertivalNames[size] = (char)((int)'1' + size);
-		}
+	}
 
-		for(int i = 0; i < BOARD_CELL; i++){ //Создаем ячейки поля - присваиваем им имена.
-			for(int j = 0; j < BOARD_CELL; j++){
+	public void setFigure(int x, int y) { //метод реализует установку в ячейку фигуры figure.
+		figures[x][y] = this.figure;
+	}
 
-				String name = String.valueOf(this.horizontNames[j]) + String.valueOf(this.vertivalNames[i]);
-				board[i][j] = new Cell(name);
+	public boolean move(Cell source, Cell dest)  {
+		boolean result = false;
+		int one = source.getX();
+		int two = source.getX();
+		Cell[]test = new Cell[8];
+			try {
+				if (testPositionFigure(this.source)) {
+					result = true;
+				}
+			} catch (FigureNotFoundException f) {
+				System.out.println("NotFoundException");
 			}
+
+			try {
+				test = figure.way(source, dest);
+			} catch (OccupiedWayException o) {
+				System.out.println("The way is occupied");
+			} catch (ImposibleMoveException i) {
+				System.out.println("The move is impossible");
+			}
+
+		figure.copy(dest);
+		result = true;
+		return result;
+	}
+
+	public boolean testPositionFigure(Cell source) throws FigureNotFoundException {
+		boolean result = false;
+		int a = source.getX();
+		int b = source.getY();
+		if (figures[a][b] != null) {
+			result = true;
+		} else {
+			throw  new  FigureNotFoundException();
 		}
+		return result;
 	}
 
-	public static void main(String[] args) {
-
-		Board board = new Board();
-	}
 }
