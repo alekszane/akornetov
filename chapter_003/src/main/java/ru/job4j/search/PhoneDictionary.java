@@ -1,6 +1,7 @@
 package ru.job4j.search;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -10,23 +11,29 @@ import java.util.List;
  */
 public class PhoneDictionary {
 
-private List<Person> persons = new ArrayList<Person>();
+	private List<Person> persons = new ArrayList<Person>();
 
 	public void addPerson(Person person) {
-	this.persons.add(person);
+		this.persons.add(person);
 	}
+
 	/**
 	 * Вернуть список всех пользователей, который содержат key в любых полях.
+	 *
 	 * @param key Ключ поиска.
 	 * @return Список подошедших пользователей.
-	**/
+	 **/
 	public List<Person> findPerson(String key) {
-		List<Person> result = new ArrayList<Person>();
-		for (Person pers: persons) {
-			if (pers.getSurname() == key) {
-				result.add(pers);
-			}
+		List<Person> result = new ArrayList<>();
+			for (Person pers : persons) {
+				if (pers.getSurname().contains(key) || pers.getName().contains(key) || pers.getPhone().contains(key) || pers.getAddress().contains(key)) {
+					result.add(pers);
+				}
+			} return result;
 		}
-		return  result;
-	}
 }
+
+
+
+
+
