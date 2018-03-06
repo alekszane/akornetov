@@ -13,10 +13,10 @@ import java.util.List;
 public class UserConvert {
 	HashMap<Integer, User> process(List<User> list) {
 		User[] users = list.toArray(new User[list.size()]);
-		HashMap<Integer, User> mapUser = new HashMap<Integer, User>();
+		HashMap<Integer, User> mapUser = new HashMap<>();
 
 		for (int i = 0; i < users.length; i++) {
-			int id = users[i].getId();
+			Integer id = users[i].getId();
 			mapUser.put(id, users[i]);
 		}
 		return mapUser;
