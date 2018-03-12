@@ -1,12 +1,16 @@
 package ru.job4j.start;
 import ru.job4j.model.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by All on 27.12.2017.
  */
 public class StartUI {
     private Input input;
     private Tracker tracker;
-    private int[] ranges = new  int[6];
+    private List<Integer> ranges = new ArrayList<>(6);
     /**
      * Конструтор инициализирующий поля.
      * @param input ввод данных.

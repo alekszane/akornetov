@@ -24,7 +24,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Input input = new StubInput(new String[]{"0", "test name", "desc", "1"}); //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init(); // создаём StartUI и вызываем метод init()
-        assertThat(tracker.getAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+        assertThat(tracker.getAll().get(0).getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 
     //Метод позваляет просматривать пользователю колличество всех заявок.
@@ -37,7 +37,7 @@ public class StartUITest {
         tracker.add(item1);
         Input input = new StubInput(new String[]{"1", "test name"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.getAll().length, is(2));
+        assertThat(tracker.getAll().size(), is(2));
     }
 
     // Метод тестирует редактирование полей заявки пользователем.
@@ -48,7 +48,7 @@ public class StartUITest {
         tracker.add(item); //Напрямую добавляем заявку
         Input input = new StubInput(new String[]{"2", item.getName(), "test name", "desc", "6"}); //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init();  // создаём StartUI и вызываем метод init()
-        assertThat(tracker.getAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+        assertThat(tracker.getAll().get(0).getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 
     // Тестируем удаление заявки пользователем.
@@ -61,7 +61,7 @@ public class StartUITest {
         tracker.add(item2);
         Input input = new StubInput(new String[]{"3", "name4"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.getAll()[0].getName(), is("name5"));
+        assertThat(tracker.getAll().get(0).getName(), is("name5"));
     }
 
     // Тестируем поиск по ID заявки пользователем.
@@ -72,7 +72,7 @@ public class StartUITest {
         tracker.add(item);
         Input input = new StubInput(new String[]{"4", "name6", item.getId()});
         new StartUI(input, tracker).init();
-        assertThat(tracker.getAll()[0].getName(), is("name6"));
+        assertThat(tracker.getAll().get(0).getName(), is("name6"));
     }
 
     // Тестируем поиск по name заявки пользователем.
@@ -82,6 +82,6 @@ public class StartUITest {
         Item item = new Item("name2", "desc2", 9);
         Input input = new StubInput(new String[]{"5", "name2"});
         new StartUI(input, tracker).init();
-        assertThat(this.createAndAdd(item).getAll()[0].getName(), is("name2"));
+        assertThat(this.createAndAdd(item).getAll().get(0).getName(), is("name2"));
     }
 }

@@ -1,6 +1,8 @@
 package ru.job4j.start;
 
 
+import java.util.List;
+
 /**
  * Created by All on 29.12.2017.
  */
@@ -19,10 +21,10 @@ public class StubInput implements Input {
     }
 
     @Override
-    public int ask(String question, int[] range) {
+    public int ask(String question, List<Integer> list) {
         int key  = Integer.valueOf(this.ask(question));
         boolean exist = false;
-        for (int value: range){
+        for (Integer value: list){
             if (value == key){
                 exist = true;
                 break;

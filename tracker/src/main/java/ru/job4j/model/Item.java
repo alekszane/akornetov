@@ -4,8 +4,8 @@ package ru.job4j.model;
  */
 public class Item {
     private String id; //  ID заявки
-    private String name; // Имя заявки
-    private String desc; // Описание заявки
+    protected String name; // Имя заявки
+    protected String desc; // Описание заявки
     private long created; // Дата создания заявки
     private String comment; // Комментарий к заявке
 
@@ -27,6 +27,10 @@ public class Item {
 
     public String getName() {
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDesc() {

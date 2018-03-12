@@ -1,6 +1,8 @@
 package ru.job4j.start;
 import ru.job4j.model.*;
 
+import java.util.List;
+
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project tracker
@@ -100,7 +102,7 @@ public class MenuTracker {
 		@Override
 		public void execute(Input input, Tracker tracker) {
 			String name = input.ask("Please enter the task's name: ");
-			Item[] find = tracker.findByName(name);
+			List<Item> find = tracker.findByName(name);
 			for (Item itm : find) {
 				if (itm != null && itm.getName().equals(name)) {
 					tracker.delete(itm.getId());
@@ -133,7 +135,7 @@ public class MenuTracker {
 		@Override
 		public void execute(Input input, Tracker tracker) {
 			String name = input.ask("Please enter the task's name: ");
-			Item[] find = tracker.findByName(name);
+			List<Item> find = tracker.findByName(name);
 			for (Item itm : find) {
 				if (itm != null && itm.getName().equals(name)) {
 					System.out.println("Task found");
