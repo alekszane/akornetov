@@ -1,11 +1,8 @@
-package ru.job4j.search;
+package ru.job4j.collections;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
-
-import java.util.Collections;
-import java.util.LinkedList;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)

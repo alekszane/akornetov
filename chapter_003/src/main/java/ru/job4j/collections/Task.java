@@ -1,8 +1,6 @@
-package ru.job4j.search;
+package ru.job4j.collections;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Comparator;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)

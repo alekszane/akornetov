@@ -1,7 +1,6 @@
-package ru.job4j.search;
+package ru.job4j.collections;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ import java.util.List;
  */
 public class PhoneDictionary {
 
-	private List<Person> persons = new ArrayList<Person>();
+	private List<Person> persons = new ArrayList<>();
 
 	public void addPerson(Person person) {
 		this.persons.add(person);
