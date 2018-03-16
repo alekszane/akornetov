@@ -10,7 +10,7 @@ import java.util.List;
 public class StartUI {
     private Input input;
     private Tracker tracker;
-    private List<Integer> ranges = new ArrayList<>(6);
+    private int[] ranges = new int[6];
     /**
      * Конструтор инициализирующий поля.
      * @param input ввод данных.
@@ -23,8 +23,8 @@ public class StartUI {
 
     public void fillRanges(MenuTracker menu) {  // метод заполняет массив ranges
 
-        UserAction[] ua = menu.getActions();
-        for (int i = 0; i < ua.length; i++) {
+        List<UserAction> ua = menu.getActions();
+        for (int i = 0; i < ua.size(); i++) {
             ranges[i] = i;
         }
     }
