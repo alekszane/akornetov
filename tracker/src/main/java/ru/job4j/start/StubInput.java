@@ -22,13 +22,13 @@ public class StubInput implements Input {
     public int ask(String question, int[] ranges) {
         int key  = Integer.valueOf(this.ask(question));
         boolean exist = false;
-        for (int value: ranges){
-            if (value == key){
+        for (int value: ranges) {
+            if (value == key) {
                 exist = true;
                 break;
             }
         }
-        if (!exist){
+        if (!exist) {
             throw  new UnsupportedOperationException("Operation not supported");
         }
         return key;
