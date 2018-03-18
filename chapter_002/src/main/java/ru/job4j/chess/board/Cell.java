@@ -1,7 +1,5 @@
 package ru.job4j.chess.board;
 
-import ru.job4j.chess.figures.Figure;
-
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project chapter_002
@@ -23,5 +21,7 @@ public class Cell { //Класс реализует ячейку на шахма
 	public int getY() {
 		return this.y;
 	}
+
+
 
 }

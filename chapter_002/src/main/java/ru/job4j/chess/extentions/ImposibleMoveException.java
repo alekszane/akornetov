@@ -7,21 +7,7 @@ package ru.job4j.chess.extentions;
  */
 public class ImposibleMoveException extends Exception { // Исключение движение фигуры не возможно!
 	public ImposibleMoveException() {
+		System.out.println("движение фигуры не возможно!");
 	}
 
-	public ImposibleMoveException(String message) {
-		super(message);
-	}
-
-	public ImposibleMoveException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public ImposibleMoveException(Throwable cause) {
-		super(cause);
-	}
-
-	public ImposibleMoveException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
 }

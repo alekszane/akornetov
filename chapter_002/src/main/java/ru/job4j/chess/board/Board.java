@@ -9,36 +9,26 @@ import ru.job4j.chess.figures.Figure;
  */
 public class Board {
 
-	private Cell source; // Начальная ячейка.
-	private Cell dest; // Конечная ячейка.
-	private Figure[][] figures; //Массив фигур (ячеек).
-	private Figure figure; //Фигура  Слон
+	private Figure[][] figures = new Figure[8][8];
 
+	public Board() {}
 
-	public Board(Cell source, Cell dest, Figure[][] figures, Figure figure) {
-		this.source = source;
-		this.dest = dest;
-		this.figures = figures;
-		this.figure = figure;
-	}
-
-	public void addFigure(Figure figure) {
-		if (figure != null) {
-			this.figure = figure;
+	public boolean addFigure(Cell source, Figure figure) throws ImposibleMoveException {
+		boolean res = false;
+		figures[source.getX()][source.getY()] = figure;
+		if (figure == null) {
+			res = true;
+		} else {
+			throw new ImposibleMoveException();
 		}
+		return res;
 	}
 
-	public void setFigure(int x, int y) { //метод реализует установку в ячейку фигуры figure.
-		figures[x][y] = this.figure;
-	}
 
-	public boolean move(Cell source, Cell dest)  {
+	public boolean move(Cell source, Cell dest) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
 		boolean result = false;
-		int one = source.getX();
-		int two = source.getX();
-		Cell[]test = new Cell[8];
 			try {
-				if (testPositionFigure(this.source)) {
+				if (figures(this.source)) {
 					result = true;
 				}
 			} catch (FigureNotFoundException f) {
@@ -58,16 +48,5 @@ public class Board {
 		return result;
 	}
 
-	public boolean testPositionFigure(Cell source) throws FigureNotFoundException {
-		boolean result = false;
-		int a = source.getX();
-		int b = source.getY();
-		if (figures[a][b] != null) {
-			result = true;
-		} else {
-			throw  new  FigureNotFoundException();
-		}
-		return result;
-	}
 
 }

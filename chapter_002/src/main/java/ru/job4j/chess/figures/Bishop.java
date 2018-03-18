@@ -1,24 +1,28 @@
 package ru.job4j.chess.figures;
-import ru.job4j.chess.extentions.*;
 import ru.job4j.chess.board.Cell;
+import ru.job4j.chess.extentions.*;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project chapter_002
  *         Created on 17.01.2018.
  */
-public class Bishop extends Figure {
-
-	private Cell position;
-	private Cell[] array = new Cell[8]; //Может ходить максимум на 8 ячеек.
-
-	public Bishop(Cell position) {
-		super(position);
-	}
+public class Bishop implements Figure {
 
 	@Override
 	public Cell[] way(Cell source, Cell dest) throws ImposibleMoveException, OccupiedWayException {
 
+	if (source == null && dest != null){
+
+		for (Cell a : array) {
+
+		}
+
+		source = step;
+
+
+	}
+	/*int[] x = {};
 	int x1 = source.getX();
 	int y1 = source.getY();
 	int x2 = dest.getX();
@@ -31,7 +35,7 @@ public class Bishop extends Figure {
 			y1 += 1;
 			int position = 0;
 			while (x1 < dest.getX() && y1 < dest.getY()) {
-				array[position] = new Cell(x1, y1);
+				array[position] = new ru.job4j.chess.board.Cell(x1, y1);
 				position++;
 				x1++;
 				y1++;
@@ -43,7 +47,7 @@ public class Bishop extends Figure {
 				int position = 0;
 				x1 += 1;
 				y1 += 1;
-				array[position] = new Cell(x1, y1);
+				array[position] = new ru.job4j.chess.board.Cell(x1, y1);
 				position++;
 				x1++;
 				y1++;
@@ -54,7 +58,7 @@ public class Bishop extends Figure {
 			int position = 0;
 			x1 -= 1;
 			y1 -= 1;
-			array[position] = new Cell(x1, y1);
+			array[position] = new ru.job4j.chess.board.Cell(x1, y1);
 			position++;
 			x1--;
 			y1--;
@@ -64,7 +68,7 @@ public class Bishop extends Figure {
 			int position = 0;
 			x1 -= 1;
 			y1 += 1;
-			array[position] = new Cell(x1, y1);
+			array[position] = Cell(x1, y1);
 			position++;
 			x1--;
 			y1++;
@@ -74,7 +78,7 @@ public class Bishop extends Figure {
 			int position = 0;
 			x1 += 1;
 			y1 -= 1;
-			array[position] = new Cell(x1, y1);
+			array[position] = new ru.job4j.chess.board.Cell(x1, y1);
 			position++;
 			x1++;
 			y1--;
@@ -84,7 +88,7 @@ public class Bishop extends Figure {
 			int position = 0;
 			x1 += 1;
 			y1 += 1;
-			array[position] = new Cell(x1, y1);
+			array[position] = new ru.job4j.chess.board.Cell(x1, y1);
 			position++;
 			x1++;
 			y1++;
@@ -98,7 +102,7 @@ public class Bishop extends Figure {
 	} else {
 		throw new ImposibleMoveException();
 	}
-	return array;
+	return array;*/
 
 	}
 

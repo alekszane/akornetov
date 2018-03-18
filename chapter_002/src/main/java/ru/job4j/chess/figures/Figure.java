@@ -10,8 +10,6 @@ import ru.job4j.chess.extentions.*;
 public abstract class Figure { //Абстрактный класс, создаем на его основе другие фигуры.
 
 	private final Cell position;
-	protected Cell[][] cells;
-	private String figureName;
 
 	public Figure(Cell position) {
 		this.position = position;
