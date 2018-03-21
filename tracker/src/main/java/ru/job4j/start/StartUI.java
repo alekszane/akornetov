@@ -10,7 +10,7 @@ import java.util.List;
 public class StartUI {
     private Input input;
     private Tracker tracker;
-    private int[] ranges = new int[6];
+    private List<Integer> ranges = new ArrayList<Integer>(7);
     /**
      * Конструтор инициализирующий поля.
      * @param input ввод данных.
@@ -21,25 +21,25 @@ public class StartUI {
         this.tracker = tracker;
     }
 
-    public void fillRanges(MenuTracker menu) {  // метод заполняет массив ranges
+    public void fillRanges(MenuTracker menu) {  // метод заполняет лист ranges
 
         List<UserAction> ua = menu.getActions();
         for (int i = 0; i < ua.size(); i++) {
-            ranges[i] = i;
+            ranges.add(i);
         }
     }
     /**
      * Основой цикл программы.
      */
     public void init() {
-        Tracker tracker = new Tracker();
         MenuTracker menu = new MenuTracker(this.input, tracker);
         menu.fillActions();
         fillRanges(menu);
         do {
             menu.show();
             menu.select(input.ask("Select: ", ranges));
-        } while (!"y".equals(this.input.ask("Exit? y : ")));
+        } while (!"y".equals(this.input.ask("For Exit inter y  ")));
+
     }
 
     /**

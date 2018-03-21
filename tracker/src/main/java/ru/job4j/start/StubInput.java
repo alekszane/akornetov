@@ -1,25 +1,27 @@
 package ru.job4j.start;
 
 
+import java.util.List;
+
 /**
  * Created by All on 29.12.2017.
  */
 public class StubInput implements Input {
-    private String[] answers; //Ответы пользователя
+    private List<String> answers; //Ответы пользователя
     private int position = 0;
 
-    public StubInput(String[] answers) {
+    public StubInput(List<String> answers) {
         this.answers = answers;
     } // конструктор Stub Input
 
     @Override
     public String ask(String question) {
-        String a = "6";
-        return (position < answers.length) ? answers[position++] : a;
+        String a = "7";
+        return (position < answers.size()) ? answers.get(position++) : a;
     }
 
     @Override
-    public int ask(String question, int[] ranges) {
+    public int ask(String question, List<Integer> ranges) {
         int key  = Integer.valueOf(this.ask(question));
         boolean exist = false;
         for (int value: ranges) {

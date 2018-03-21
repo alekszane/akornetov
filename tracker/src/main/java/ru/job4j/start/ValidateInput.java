@@ -1,5 +1,7 @@
 package ru.job4j.start;
 
+import java.util.List;
+
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project tracker
@@ -19,7 +21,7 @@ public class ValidateInput implements Input {
 	}
 
 	@Override
-	public int ask(String question, int[] range) {
+	public int ask(String question, List<Integer> range) {
 		boolean invalid = true;
 		int value = -1;
 		do {

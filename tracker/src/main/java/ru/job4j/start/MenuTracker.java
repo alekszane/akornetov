@@ -32,7 +32,7 @@ public class MenuTracker {
 	private Tracker tracker; // Трекер
 	private int position = 0;
 
-	private List<UserAction> actions = new ArrayList<>(6); // В массиве храним номера действий, которые может совершить пользователь
+	private List<UserAction> actions = new ArrayList<>(7); // В массиве храним номера действий, которые может совершить пользователь
 
 	public MenuTracker(Input input, Tracker tracker) {
 		this.input = input;
@@ -49,7 +49,8 @@ public class MenuTracker {
 		this.actions.add(new EditItem(2, "Edit the new item")); // создаем экземпляр внешнего класса
 		this.actions.add(this.new DeleteItem(3, "Delete is item")); // внутренний не статичный класс
 		this.actions.add(this.new FindItemById(4, "Find item by id")); // внутренний не статичный класс
-		this.actions.add(this.new FindItemsByName(5, " Find item by name ")); // внутренний не статичный класс
+		this.actions.add(this.new FindItemsByName(5, " Find item by name")); // внутренний не статичный класс
+		this.actions.add(this.new Exit(6, " Exit program")); //внутренний не статичный класс
 	}
 
 	public void select(int key) { //Метод выполняет действия выбранные пользователем.
@@ -143,6 +144,17 @@ public class MenuTracker {
 				}
 				break;
 			}
+		}
+	}
+
+	private class Exit extends BaseAction { //Внутренний класс реализует выход из программы.
+
+		public Exit(int key, String name) {
+			super(key, name);
+		}
+
+		@Override
+		public void execute(Input input, Tracker tracker) {
 		}
 	}
 }
