@@ -24,7 +24,7 @@ public class StartUITest {
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();
-        Input input = new StubInput(Arrays.asList("0", "test name", "desc", "1", "y")); //создаём StubInput с последовательностью действий
+        Input input = new StubInput(Arrays.asList("0", "test name", "desc", "6", "y")); //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init(); // создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll().get(0).getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
@@ -37,7 +37,7 @@ public class StartUITest {
         tracker.add(item);
         Item item1 = new Item("name5", "desc5", 5);
         tracker.add(item1);
-        Input input = new StubInput(Arrays.asList("1", "test name"));
+        Input input = new StubInput(Arrays.asList("1", "name", "6", "y"));
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll().size(), is(2));
     }
@@ -48,7 +48,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("name", "desk", 1);
         tracker.add(item); //Напрямую добавляем заявку
-        Input input = new StubInput(Arrays.asList("2", item.getName(), "test name", "desc", "6")); //создаём StubInput с последовательностью действий
+        Input input = new StubInput(Arrays.asList("2", item.getName(), "test name", "desc", "6", "y")); //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init();  // создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll().get(0).getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
@@ -61,7 +61,7 @@ public class StartUITest {
         tracker.add(item);
         Item item2 = new Item("name5", "desc5", 5);
         tracker.add(item2);
-        Input input = new StubInput(Arrays.asList("3", "name4"));
+        Input input = new StubInput(Arrays.asList("3", "name4", "6", "y"));
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll().get(0).getName(), is("name5"));
     }
@@ -72,7 +72,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("name6", "desc6", 6);
         tracker.add(item);
-        Input input = new StubInput(Arrays.asList("4", "name6", item.getId()));
+        Input input = new StubInput(Arrays.asList("4", "name6", item.getId(), "6", "y"));
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll().get(0).getName(), is("name6"));
     }
@@ -82,7 +82,7 @@ public class StartUITest {
     public void whenAddItemAndShowItemByName() {
         Tracker tracker = new Tracker();
         Item item = new Item("name2", "desc2", 9);
-        Input input = new StubInput(Arrays.asList("5", "name2"));
+        Input input = new StubInput(Arrays.asList("5", "name2", "6", "y"));
         new StartUI(input, tracker).init();
         assertThat(this.createAndAdd(item).getAll().get(0).getName(), is("name2"));
     }
