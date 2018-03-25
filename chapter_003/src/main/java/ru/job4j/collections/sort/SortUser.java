@@ -1,8 +1,7 @@
 package ru.job4j.collections.sort;
 
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import javax.jws.soap.SOAPBinding;
+import java.util.*;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
@@ -11,10 +10,16 @@ import java.util.TreeSet;
  */
 public class SortUser {
 
+	/*Метод выполняет сортировку User по полю Age*/
 	public Set<User> sort (List<User> list) {
 
 		Set<User> users = new TreeSet<>();
-
-	return users;
+		for (User user : list) {
+			users.add(user);
+		}
+		for(User user : users) {
+			System.out.println(user.getAge());
+		}
+		return users;
 	}
 }

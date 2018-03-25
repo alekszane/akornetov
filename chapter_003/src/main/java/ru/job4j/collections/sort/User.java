@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
  *         project collections
  *         Created on 19.03.2018.
  */
-public class User implements Comparable{
+public class User implements Comparable<User> {
 
 	private String name;
 	private int age;
@@ -26,7 +26,14 @@ public class User implements Comparable{
 	}
 
 	@Override
-	public int compareTo(@NotNull Object o) {
+	public int compareTo(@NotNull User o) {
+
+		User entry = (User) o;
+
+		int result = age - entry.getAge();
+		if(result != 0)
+			return result / Math.abs( result );
+
 		return 0;
 	}
 }
