@@ -30,6 +30,7 @@ import java.util.List;
 public class MenuTracker {
 	private Input input; //Интерфейс ввода
 	private Tracker tracker; // Трекер
+	private boolean exit = false;
 
 
 	private List<UserAction> actions = new ArrayList<>(7); // В массиве храним номера действий, которые может совершить пользователь
@@ -65,13 +66,8 @@ public class MenuTracker {
 		}
 	}
 
-	public  boolean exitProgram (Input input) {
-		boolean ext = false; //Переменная выхода из программы.
-		if (actions.get(6).key() == 6) {
-			input.ask("For Exit inter y: ");
-				ext = true;
-		}
-		return ext;
+	public  boolean exitProgram () {
+		return this.exit;
 	}
 
 
@@ -164,9 +160,9 @@ public class MenuTracker {
 
 		@Override
 		public void execute(Input input, Tracker tracker) {
-
+				exit = true;
 		}
-
 	}
-
 }
+
+

@@ -40,7 +40,7 @@ public class StartUI {
             menu.select(input.ask("Select: ", ranges));
         }
         //while (!"y".equals(this.input.ask("For Exit inter y  ")));
-        while (!menu.exitProgram(this.input));
+        while (!menu.exitProgram());
     }
 
     /**
