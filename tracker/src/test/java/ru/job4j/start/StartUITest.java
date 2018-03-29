@@ -36,9 +36,8 @@ public class StartUITest {
        Item item = new Item("name4", "desc4", 4);
         tracker.add(item);
         Item item1 = new Item("name5", "desc5", 5);
-        tracker.add(item);
         tracker.add(item1);
-        Input input = new StubInput(Arrays.asList("1", "name", "6", "y"));
+        Input input = new StubInput(Arrays.asList("1", "6", "y"));
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll().size(), is(2));
     }
@@ -49,7 +48,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("name", "desk", 1);
         tracker.add(item); //Напрямую добавляем заявку
-        Input input = new StubInput(Arrays.asList("2", item.getName(), "test name", "desc", "6", "y")); //создаём StubInput с последовательностью действий
+        Input input = new StubInput(Arrays.asList("2", item.getId(), "test name", "desc", "6", "y")); //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init();  // создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll().get(0).getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
@@ -73,7 +72,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("name6", "desc6", 6);
         tracker.add(item);
-        Input input = new StubInput(Arrays.asList("4", "name6", item.getId(), "6", "y"));
+        Input input = new StubInput(Arrays.asList("4", item.getId(), "6", "y"));
         new StartUI(input, tracker).init();
         assertThat(tracker.getAll().get(0).getName(), is("name6"));
     }

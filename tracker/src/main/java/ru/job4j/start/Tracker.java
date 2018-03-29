@@ -27,6 +27,7 @@ public class Tracker {
      * @param item новая заявка.
      */
     public Item add(Item item) {
+        item.setId(generateId());
         items.add(item);
         return item;
     }

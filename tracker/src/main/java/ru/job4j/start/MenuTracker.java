@@ -45,7 +45,7 @@ public class MenuTracker {
 	}
 
 	public void fillActions() {
-		this.actions.add(new AddItem(0, "Add the new item")); //создаем экземпляр внутреннего не статичного класса
+		this.actions.add(this.new AddItem(0, "Add the new item")); //создаем экземпляр внутреннего не статичного класса
 		this.actions.add(new MenuTracker.ShowItems(1, "Show all items")); //создаем экземпляр внутреннего статичного класса
 		this.actions.add(new EditItem(2, "Edit the new item")); // создаем экземпляр внешнего класса
 		this.actions.add(this.new DeleteItem(3, "Delete is item")); // внутренний не статичный класс
@@ -146,6 +146,7 @@ public class MenuTracker {
 			for (Item itm : find) {
 				if (itm != null && itm.getName().equals(name)) {
 					System.out.println("Task found");
+					System.out.println(itm.getId());
 				}
 				break;
 			}
