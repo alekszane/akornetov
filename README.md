@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alekszane/akornetov.svg?branch=master)](https://travis-ci.org/alekszane/akornetov)
+[![codecov](https://codecov.io/gh/alekszane/akornetov/branch/master/graph/badge.svg)](https://codecov.io/gh/alekszane/akornetov)
 ### akornetov
 
 [/job4j.ru](http://job4j.ru/)
