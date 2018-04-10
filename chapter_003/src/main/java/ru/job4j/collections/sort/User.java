@@ -1,7 +1,5 @@
 package ru.job4j.collections.sort;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project collections
@@ -26,14 +24,12 @@ public class User implements Comparable<User> {
 	}
 
 	@Override
-	public int compareTo(@NotNull User o) {
+	public int compareTo(User o) {
 
 		User entry = (User) o;
 
 		int result = age - entry.getAge();
-		if(result != 0)
-			return result / Math.abs( result );
 
-		return 0;
+		return result != 0 ? result / Math.abs( result ) : 0 ;
 	}
 }

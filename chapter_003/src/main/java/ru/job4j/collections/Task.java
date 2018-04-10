@@ -1,7 +1,5 @@
 package ru.job4j.collections;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project collections
@@ -29,13 +27,11 @@ public class Task implements Comparable<Task> {
 
 
 	@Override
-	public int compareTo(@NotNull Task o) {
+	public int compareTo( Task o) {
 		Task entry = (Task) o;
 		int result = priority - entry.priority;
-		if (result != 0) {
-			return result / Math.abs(result);
-		}
-		return result;
+
+		return result != 0 ? result / Math.abs(result): result;
 	}
 }
 
