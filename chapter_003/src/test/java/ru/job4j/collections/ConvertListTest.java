@@ -19,10 +19,10 @@ public class ConvertListTest {
 	public  void whenConvertListThenDoubleArray() {
 	List<Integer> testList;
 	ConvertList convert = new ConvertList();
-	Integer[][] array = { {1, 2, 3, 4 } , {5, 6, 7, 8} };
+	Integer[][] array = {{1, 2, 3, 4 }, {5, 6, 7, 8}};
 	testList = convert.toList(array);
 	Integer[][] result = convert.toArray(testList, 3);
-	Integer[][] test = { {1, 2, 3},{4, 5, 6},{7, 8, 0} };
+	Integer[][] test = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}};
 	assertThat(result, is(test));
 	}
 

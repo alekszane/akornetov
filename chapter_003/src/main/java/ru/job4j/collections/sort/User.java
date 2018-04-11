@@ -30,6 +30,6 @@ public class User implements Comparable<User> {
 
 		int result = age - entry.getAge();
 
-		return result != 0 ? result / Math.abs( result ) : 0 ;
+		return result != 0 ? result / Math.abs(result) : 0;
 	}
 }

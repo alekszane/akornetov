@@ -11,13 +11,13 @@ import java.util.*;
 public class SortUser {
 
 	/*Метод выполняет сортировку User по полю Age*/
-	public Set<User> sort (List<User> list) {
+	public Set<User> sort(List<User> list) {
 
 		Set<User> users = new TreeSet<>();
 		for (User user : list) {
 			users.add(user);
 		}
-		for(User user : users) {
+		for (User user : users) {
 			System.out.println(user.getAge());
 		}
 		return users;

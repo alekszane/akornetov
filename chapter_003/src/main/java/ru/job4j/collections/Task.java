@@ -27,11 +27,11 @@ public class Task implements Comparable<Task> {
 
 
 	@Override
-	public int compareTo( Task o) {
+	public int compareTo(Task o) {
 		Task entry = (Task) o;
 		int result = priority - entry.priority;
 
-		return result != 0 ? result / Math.abs(result): result;
+		return result != 0 ? result / Math.abs(result) : result;
 	}
 }
 

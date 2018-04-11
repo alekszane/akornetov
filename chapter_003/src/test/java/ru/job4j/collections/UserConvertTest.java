@@ -26,6 +26,6 @@ public class UserConvertTest {
 		HashMap<Integer, User> expect = new HashMap<>();
 		expect.put(1, user1);
 		expect.put(2, user2);
-		assertThat(result, is (expect));
+		assertThat(result, is(expect));
 	}
 }

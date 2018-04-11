@@ -32,10 +32,10 @@ public class SortUserTest {
 			users.addAll(
 				Arrays.asList(
 					new User("Vasya", 29),
-					new User("Petr",55 ),
+					new User("Petr", 55),
 					new User("Aleksey", 300)
 				)
 			);
-		assertThat(result, is (users));
+		assertThat(result, is(users));
 	}
 }
