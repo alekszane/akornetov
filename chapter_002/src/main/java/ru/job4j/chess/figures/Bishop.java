@@ -7,108 +7,131 @@ import ru.job4j.chess.extentions.*;
  *         project chapter_002
  *         Created on 17.01.2018.
  */
-public class Bishop implements Figure {
+public class Bishop extends Figure implements Comparable {
+
+	private Cell[] array = new Cell[8];
+
+	public Bishop(Cell position) {
+		super(position);
+	}
+
 
 	@Override
 	public Cell[] way(Cell source, Cell dest) throws ImposibleMoveException, OccupiedWayException {
 
-	if (source == null && dest != null){
-
-		for (Cell a : array) {
-
-		}
-
-		source = step;
-
-
-	}
-	/*int[] x = {};
-	int x1 = source.getX();
-	int y1 = source.getY();
-	int x2 = dest.getX();
-	int y2 = dest.getY();
-
-	if ((x2 - x1) == (y2 - y1) || (x1 - x2) == (y1 - y2) || (x1 - x2) == (y2 - y1) || (x2 - x1) == (y2 - y1)) {
-
-		if (x1 == y1 && x1 == 0) {       // белый слон двигается из позиции 0-0 вниз по главной диагонали
-			x1 += 1;
-			y1 += 1;
-			int position = 0;
-			while (x1 < dest.getX() && y1 < dest.getY()) {
-				array[position] = new ru.job4j.chess.board.Cell(x1, y1);
-				position++;
-				x1++;
-				y1++;
+		if (compareTo(source, dest) == 0) {
+			if (compareTo(source,  dest) == 0) {
+				if (source.getX() == dest.getY() && source.getX() == 0) {       // белый слон двигается из позиции 0-0 вниз по главной диагонали
+					while (source.coordX() < dest.coordX() && source.coordY() < dest.coordY()) {
+						returnArrayCell(source);
+					}
+				}
 			}
-		}
 
-		if (x1 == y1 && x1 != 0) {         // белый слон движется по главной диагонали из позиции отличной от 0-0 ячейки шахматной доски
-			while (x1 <= 7) {
+
+			if (compareTo(source, dest) == 0 && source.getX() != 0) {         // белый слон движется по главной диагонали из позиции отличной от 0-0 ячейки шахматной доски
+				while (source.coordX() <= 7) {
+					returnArrayCell(source);
+				}
+			}
+
+			if (compareTo(source, dest) == 0) {               // определяем положение слона на доске и по его конечной точке реализуем движение
+				int a = source.coordX();
+				a -= 1;
+				int b = source.coordX();
+				b -= 1;
 				int position = 0;
-				x1 += 1;
-				y1 += 1;
-				array[position] = new ru.job4j.chess.board.Cell(x1, y1);
+				array[position] = new Cell(a, b);
 				position++;
-				x1++;
-				y1++;
+				a--;
+				b--;
 			}
-		}
 
-		if (x2 < x1 && y2 < y1) {               // определяем положение слона на доске и по его конечной точке.
-			int position = 0;
-			x1 -= 1;
-			y1 -= 1;
-			array[position] = new ru.job4j.chess.board.Cell(x1, y1);
-			position++;
-			x1--;
-			y1--;
-		}
-
-		if (x2 < x1 && y2 > y1) {
-			int position = 0;
-			x1 -= 1;
-			y1 += 1;
-			array[position] = Cell(x1, y1);
-			position++;
-			x1--;
-			y1++;
-		}
-
-		if (x2 > x1 && y2 > y1) {
-			int position = 0;
-			x1 += 1;
-			y1 -= 1;
-			array[position] = new ru.job4j.chess.board.Cell(x1, y1);
-			position++;
-			x1++;
-			y1--;
-		}
-
-		if (x2 > x1 && y2 > y1) {
-			int position = 0;
-			x1 += 1;
-			y1 += 1;
-			array[position] = new ru.job4j.chess.board.Cell(x1, y1);
-			position++;
-			x1++;
-			y1++;
-		}
-
-		for (Cell cell : array) {
-			if (cell == source) {
-				throw new OccupiedWayException();
+			if (compareTo(source, dest) == 0) {
+				int a = source.coordX();
+				a -= 1;
+				int b = source.coordY();
+				b += 1;
+				int position = 0;
+				array[position] = new Cell(a, b);
+				position++;
+				a--;
+				b++;
 			}
+
+			if (compareTo(source, dest) == 0) {
+				int a = source.coordX();
+				a += 1;
+				int b = source.coordY();
+				b -= 1;
+				int position = 0;
+				array[position] = new Cell(a, b);
+				position++;
+				a++;
+				b--;
+			}
+
+			if (compareTo(source, dest) == 0) {
+				returnArrayCell(source);
+			}
+
+
+			for (Cell cell : array) {
+				if (cell == source) {
+					throw new OccupiedWayException();
+				}
+
+			}
+		}  else {
+			throw  new  ImposibleMoveException();
 		}
-	} else {
-		throw new ImposibleMoveException();
+		return array;
 	}
-	return array;*/
-
-	}
-
 
 	@Override
 	public Figure copy(Cell dest) {
 		return new Bishop(dest);
+	}
+
+	public int compareTo(Cell source, Cell dest) {
+		int tmp = 1;
+		if ((dest.coordX() - source.coordX()) == (dest.coordY() - source.coordY())) {
+			tmp = 0;
+		}
+		if ((source.coordX() - dest.coordX()) == (source.coordY() - dest.coordY())) {
+			tmp = 0;
+		}
+		if ((dest.coordX() < source.coordX()) && (dest.coordY() < source.coordY())) {
+			tmp = 0;
+		}
+		if ((dest.coordX() < source.coordX()) && (dest.coordY() > source.coordY())) {
+			tmp = 0;
+		}
+		if ((dest.coordX() > source.coordX()) && (dest.coordY() > source.coordY())) {
+			tmp = 0;
+		}
+		if ((dest.coordX() > source.coordX()) && (dest.coordY() < source.coordY())) {
+			tmp = 0;
+		}
+		return tmp;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		return 0;
+	}
+
+	public Cell[] returnArrayCell(Cell source) {
+		int a = source.coordX();
+		a += 1;
+		int b = source.coordY();
+		b += 1;
+		int position = 0;
+
+		array[position] = new Cell(a, b);
+		position++;
+		a++;
+		b++;
+		return array;
 	}
 }

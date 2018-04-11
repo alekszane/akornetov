@@ -16,6 +16,6 @@ public class CoffeMachineTest {
 		//Создаем объект класса
 		CoffeMachine machine = new CoffeMachine(50, 21);
 		int[] result = {10, 10, 5, 2, 2};
-		assertThat(machine.changes(machine.getValue(), machine.getPrice()), is (result));
+		assertThat(machine.changes(machine.getValue(), machine.getPrice()), is(result));
 	}
 }

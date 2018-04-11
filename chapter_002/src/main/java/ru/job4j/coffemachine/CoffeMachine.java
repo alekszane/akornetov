@@ -92,7 +92,7 @@ public class CoffeMachine {
 		}
 				Arrays.sort(numCoin); // Сортируем массив
 
-				for (int x = 0; x <numCoin.length / 2; x++) { //Выводим в обр. порядке
+				for (int x = 0; x < numCoin.length / 2; x++) { //Выводим в обр. порядке
 					int tmp = numCoin[x];
 					numCoin[x] = numCoin[numCoin.length - 1 - x];
 					numCoin[numCoin.length - 1 - x] = tmp;

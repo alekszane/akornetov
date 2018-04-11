@@ -1,8 +1,8 @@
 package ru.job4j.chess.board;
 
 import org.junit.Test;
+import ru.job4j.chess.extentions.FigureNotFoundException;
 import ru.job4j.chess.figures.Bishop;
-import ru.job4j.chess.figures.Cell;
 import ru.job4j.chess.figures.Figure;
 
 import static org.hamcrest.core.Is.is;
@@ -16,13 +16,17 @@ import static org.junit.Assert.assertThat;
  */
 public class BoardTest {
 	@Test
-	public void testBoard()  {
-		Board board = new Board();
+	public void testTheBoard()  {
 		Cell source = new Cell(0, 0);
-		Cell dest = new Cell(5, 5);
-		Figure figure = new Bishop();
-		board.addFigure(source, figure);
-		boolean two = board.move(source, dest);
+		Cell dest = new Cell(7, 0);
+		Figure elephant = new Bishop(source);
+		Board board = new Board();
+		try {
+			board.fillFigures(0, 0, elephant);
+		} catch (FigureNotFoundException f) {
+			System.out.println("The figure is not found");
+		}
+		boolean two = board.move(source, dest, elephant);
 		boolean one = true;
 		assertThat(true, is(two));
 	}
