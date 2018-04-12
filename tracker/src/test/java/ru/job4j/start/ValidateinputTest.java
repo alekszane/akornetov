@@ -32,7 +32,7 @@ public class ValidateinputTest {
 	@Test
 	public void whenInvalidInput() {
 		ValidateInput input = new ValidateInput(
-				new StubInput(Arrays.asList ("invalid", "1"))
+				new StubInput(Arrays.asList("invalid", "1"))
 		);
 		input.ask("Enter", Arrays.asList(1));
 		assertThat(

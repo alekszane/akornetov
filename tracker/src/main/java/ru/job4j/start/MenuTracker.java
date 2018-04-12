@@ -32,8 +32,7 @@ public class MenuTracker {
 	private Tracker tracker; // Трекер
 	private boolean exit = false;
 
-
-	private List<UserAction> actions = new ArrayList<>(7); // В массиве храним номера действий, которые может совершить пользователь
+	private List<UserAction> actions = new ArrayList<UserAction>(7); // В листе храним номера действий, которые может совершить пользователь
 
 	public MenuTracker(Input input, Tracker tracker) {
 		this.input = input;
@@ -66,7 +65,7 @@ public class MenuTracker {
 		}
 	}
 
-	public  boolean exitProgram () {
+	public  boolean exitProgram() {
 		return this.exit;
 	}
 
