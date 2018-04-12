@@ -15,3 +15,6 @@ notifications:
       - all-1313@yandex.ru
     on_success: never # default: change
     on_failure: always # default: always
+env:
+  global:
+    - CODECOV_TOKEN=:2cc9df40-3238-45c4-b4aa-9fc3bc8d2903
