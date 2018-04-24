@@ -15,15 +15,13 @@ public class User {
 
 private String name; // Имя.
 private String passport; // Паспортные данные.
-Account account; //Банковский счет.
+private List<Account> accountsList = new ArrayList<>(); // Лист счетов пользователя.
 
 
 public User(String name, String passport) {
 	this.name = name;
 	this.passport = passport;
 }
-
-	private List<Account> accountsList = new ArrayList<>(); // Лист счетов пользователя.
 
 	public String getName() {
 		return name;

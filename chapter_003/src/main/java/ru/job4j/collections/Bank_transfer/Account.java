@@ -7,10 +7,10 @@ package ru.job4j.collections.Bank_transfer;
  */
 public class Account { //Банковский счет.
 	private int value; //(кол-во денег).
-	private int requisites; //(реквизиты счёта) - это банковский счёт.
+	private String requisit; //(реквизиты счёта) - это банковский счёт.
 
-	public Account(int requisites, int value) {
-		this.requisites = requisites;
+	public Account(String requisites, int value) {
+		this.requisit = requisites;
 		this.value = value;
 	}
 
@@ -18,7 +18,11 @@ public class Account { //Банковский счет.
 		return value;
 	}
 
-	public int getRequisites() {
-		return requisites;
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	public String getRequisit() {
+		return requisit;
 	}
 }
