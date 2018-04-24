@@ -1,4 +1,4 @@
-package ru.job4j.collections.Bank_transfer;
+package ru.job4j.collections.banktransfer;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)

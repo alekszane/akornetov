@@ -1,4 +1,4 @@
-package ru.job4j.collections.Bank_transfer;
+package ru.job4j.collections.banktransfer;
 
 import java.util.*;
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
  *         project junior
  *         Created on 14.04.2018.
  */
-public class Bank_transfer {
+public class BankTransfer {
 
-	private  Map <User, List<Account>> userBank = new HashMap<>(); //Хранилище банковских счетов
+	private  Map<User, List<Account>> userBank = new HashMap<>(); //Хранилище банковских счетов
 
 
 	/*
@@ -18,8 +18,9 @@ public class Bank_transfer {
 		*@param user
 		*/
 	public void addUser(User user) {
-		if (!userBank.containsKey(user))
-		userBank.put(user, user.getAccountsList());
+		if (!userBank.containsKey(user) && user != null) {
+			userBank.put(user, user.getAccountsList());
+		}
 	}
 	/*
 	*Метод удаляет пользователя из хранилища
@@ -32,22 +33,22 @@ public class Bank_transfer {
 	}
 
 	public void deleteAccountFromUser(String passport, Account account) { //- удалить один счёт пользователя.
-		boolean res = false;
+		int res = 0;
 
 	for (User key : userBank.keySet()) {
 		if (key.getPassport().equals(passport)) {
-			res = true;
+			res = 1;
 		}
 	}
 
 	for (List<Account> value : userBank.values()) {
-		if (value.contains(account) && res == true) {
+		if (value.contains(account) && res == 1) {
 			value.remove(account);
 			}
 		}
 	}
 
-	public List<Account> getUserAccounts (String passport) { //- получить список счетов для пользователя.
+	public List<Account> getUserAccounts(String passport) { //- получить список счетов для пользователя.
 		List<Account> userAkk = new ArrayList<>();
 		for (User key : userBank.keySet()) {
 			if (key.getPassport().equals(passport)) {
@@ -58,13 +59,13 @@ public class Bank_transfer {
 	}
 	//- метод для перечисления денег с одного счёта на другой счёт:
 	//если счёт не найден или не хватает денег на счёте srcAccount (с которого переводят) должен вернуть false.
-	public boolean transferMoney (String srcPassport, String srcRequisite, String destPassport, String destRequisite, int amount) {
+	public boolean transferMoney(String srcPassport, String srcRequisite, String destPassport, String destRequisite, int amount) {
 		boolean result = false;
 		Set<User> keys = userBank.keySet();
 		Collection<List<Account>> value = userBank.values();
 
-			for (User UserSrc : keys) {
-				if (userBank.containsKey(UserSrc) && UserSrc.getPassport().equals(srcPassport)) {
+			for (User userSrc : keys) {
+				if (userBank.containsKey(userSrc) && userSrc.getPassport().equals(srcPassport)) {
 						for (List<Account> list : value) {
 							for (Account acc : list) {
 								if (acc.getRequisit().equals(srcRequisite) && acc.getValue() >= amount) {
@@ -72,12 +73,12 @@ public class Bank_transfer {
 									acc.setValue(removeMoney);
 									int numberAccount = list.indexOf(acc); //Номер аккаунта в листе.
 									list.set(numberAccount, acc);
-									userBank.putIfAbsent(UserSrc, list);
+									userBank.putIfAbsent(userSrc, list);
 								}
 							}
 						}
 					}
-				if (userBank.containsKey(UserSrc) && UserSrc.getPassport().equals(destPassport)) {
+				if (userBank.containsKey(userSrc) && userSrc.getPassport().equals(destPassport)) {
 					for (List<Account> list : value) {
 						for (Account acc : list) {
 							if (acc.getRequisit().equals(destRequisite) && (acc.getValue() + amount) > 0) {
@@ -85,7 +86,7 @@ public class Bank_transfer {
 								acc.setValue(removeMoney);
 								int numberAccount = list.indexOf(acc); //Номер аккаунта в листе.
 								list.set(numberAccount, acc);
-								userBank.putIfAbsent(UserSrc, list);
+								userBank.putIfAbsent(userSrc, list);
 								result = true;
 							}
 						}

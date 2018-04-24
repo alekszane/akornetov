@@ -1,4 +1,4 @@
-package ru.job4j.collections.Bank_transfer;
+package ru.job4j.collections.banktransfer;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.is;
  *         project junior
  *         Created on 16.04.2018.
  */
-public class Bank_transferTest {
+public class BankTtransferTest {
 	@Test
 	public void whenGetUserAccountThenWell() {
 		User user1 = new User("Василий", "58 10 111 898");
@@ -27,7 +27,7 @@ public class Bank_transferTest {
 
 		List<Account> test = new ArrayList<>();
 		test.add(account1);
-		Bank_transfer bank = new Bank_transfer();
+		BankTransfer bank = new BankTransfer();
 
 		bank.addUser(user1);
 		bank.addUser(user2);
@@ -36,7 +36,7 @@ public class Bank_transferTest {
 
 	@Test
 	public void whenTransferMonyFromTwoUsersInManyThread() {
-		Bank_transfer bank = new Bank_transfer();
+		BankTransfer bank = new BankTransfer();
 
 		User a = new User("Василий", "58 10 111 898");
 		User b = new User("Сергей", "58 10 222 333");

@@ -1,7 +1,5 @@
-package ru.job4j.collections.Bank_transfer;
+package ru.job4j.collections.banktransfer;
 
-
-import com.sun.istack.internal.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +47,11 @@ public User(String name, String passport) {
 	@Override
 	public boolean equals(Object o) {
 		boolean res = false;
-		if (this == o && getClass() == o.getClass()) res = true;
+		if (this == o && getClass() == o.getClass()) {
+		res = true;
+		}
 		return res;
-}
+	}
 	@Override
 	public int hashCode() {
 		return name.hashCode();
