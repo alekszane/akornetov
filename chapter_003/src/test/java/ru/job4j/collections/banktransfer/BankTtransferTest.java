@@ -35,6 +35,25 @@ public class BankTtransferTest {
 	}
 
 	@Test
+	public void whenDeleteOneUserAccountIsTrue() {
+		User user1 = new User("Василий", "58 10 111 898");
+
+		Account account1 = new Account("123456", 100000);
+		Account account2 = new Account("326546461", 1000);
+
+		user1.addAccountToUser("58 10 111 898", account1);
+		user1.addAccountToUser("58 10 111 898", account2);
+
+		BankTransfer bank = new BankTransfer();
+		bank.addUser(user1);
+		bank.deleteAccountFromUser("58 10 111 898", account2);
+		List<Account> list = new ArrayList<>();
+		list.add(account1);
+
+		Assert.assertThat(list, is(bank.getUserAccounts("58 10 111 898")));
+	}
+
+	@Test
 	public void whenTransferMonyFromTwoUsersInManyThread() {
 		BankTransfer bank = new BankTransfer();
 

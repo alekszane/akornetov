@@ -18,41 +18,27 @@ public class BankTransfer {
 		*@param user
 		*/
 	public void addUser(User user) {
-		if (!userBank.containsKey(user) && user != null) {
-			userBank.put(user, user.getAccountsList());
-		}
+		userBank.putIfAbsent(user, user.getUserAccount());
 	}
 	/*
 	*Метод удаляет пользователя из хранилища
 	*@param user
 	*/
 	public void deleteUser(User user) {
-		if (userBank.containsKey(user)) {
 			userBank.remove(user);
-		}
 	}
 
 	public void deleteAccountFromUser(String passport, Account account) { //- удалить один счёт пользователя.
-		int res = 0;
 
-	for (User key : userBank.keySet()) {
-		if (key.getPassport().equals(passport)) {
-			res = 1;
-		}
-	}
-
-	for (List<Account> value : userBank.values()) {
-		if (value.contains(account) && res == 1) {
-			value.remove(account);
-			}
-		}
+			getUserAccounts(passport).remove(account);
 	}
 
 	public List<Account> getUserAccounts(String passport) { //- получить список счетов для пользователя.
 		List<Account> userAkk = new ArrayList<>();
 		for (User key : userBank.keySet()) {
 			if (key.getPassport().equals(passport)) {
-				userAkk = userBank.get(key);
+				userAkk = key.getUserAccount();
+				break;
 			}
 		}
 		return userAkk;
