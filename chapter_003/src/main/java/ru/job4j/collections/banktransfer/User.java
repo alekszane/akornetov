@@ -13,7 +13,7 @@ public class User {
 
 private String name; // Имя.
 private String passport; // Паспортные данные.
-private List<Account> accountsList = new ArrayList<>(); // Лист счетов пользователя.
+private List<Account> userAccount = new ArrayList<>(); // Лист счетов пользователя.
 
 
 public User(String name, String passport) {
@@ -34,13 +34,13 @@ public User(String name, String passport) {
 		this.passport = data;
 	}
 
-	public List<Account> getAccountsList() {
-		return accountsList;
+	public List<Account> getUserAccount() {
+		return userAccount;
 	}
 
 	public void addAccountToUser(String passport, Account account) { //- добавить счёт пользователю.
 		if (this.getPassport().equals(passport)) {
-			accountsList.add(account);
+			userAccount.add(account);
 		}
 	}
 

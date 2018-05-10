@@ -25,4 +25,18 @@ public class Account { //Банковский счет.
 	public String getRequisit() {
 		return requisit;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean res = false;
+		if (this == obj && getClass() == obj.getClass()) {
+			res = true;
+		}
+		return res;
+	}
+
+	@Override
+	public int hashCode() {
+		return requisit.hashCode();
+	}
 }
