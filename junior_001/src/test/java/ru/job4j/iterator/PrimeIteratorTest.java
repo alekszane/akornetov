@@ -12,24 +12,28 @@ import static org.hamcrest.Matchers.is;
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project junior
- *         Created on 17.05.2018.
+ *         Created on 18.05.2018.
  */
-public class EvenIteratorTest {
+public class PrimeIteratorTest {
 	private Iterator<Integer> it;
 
 	@Before
 	public void setUp() {
-		it = new EvenNumbersIterator(new int[]{1, 2, 3, 4, 5, 6, 7});
+		it = new PrimeIterator(new int[]{1, 2, 3, 4, 5, 6, 7, 3571});
 	}
 
 	@Test(expected = NoSuchElementException.class)
-	public void shouldReturnEvenNumbersSequentially() {
+	public void shouldReturnPrimeNumbersOnly() {
 		assertThat(it.hasNext(), is(true));
 		assertThat(it.next(), is(2));
 		assertThat(it.hasNext(), is(true));
-		assertThat(it.next(), is(4));
+		assertThat(it.next(), is(3));
 		assertThat(it.hasNext(), is(true));
-		assertThat(it.next(), is(6));
+		assertThat(it.next(), is(5));
+		assertThat(it.hasNext(), is(true));
+		assertThat(it.next(), is(7));
+		assertThat(it.hasNext(), is(true));
+		assertThat(it.next(), is(3571));
 		assertThat(it.hasNext(), is(false));
 		it.next();
 	}
@@ -39,26 +43,15 @@ public class EvenIteratorTest {
 		assertThat(it.hasNext(), is(true));
 		assertThat(it.hasNext(), is(true));
 		assertThat(it.next(), is(2));
-		assertThat(it.next(), is(4));
-		assertThat(it.next(), is(6));
+		assertThat(it.next(), is(3));
+		assertThat(it.next(), is(5));
+		assertThat(it.next(), is(7));
+		assertThat(it.next(), is(3571));
 	}
 
 	@Test
-	public void  shouldReturnFalseIfNoAnyEvenNumbers() {
-		it = new EvenNumbersIterator(new int[]{1});
-		assertThat(it.hasNext(), is(false));
-	}
-
-	@Test
-	public void allNumbersAreEven() {
-		it = new EvenNumbersIterator(new int[]{2, 4, 6, 8});
-		assertThat(it.hasNext(), is(true));
-		assertThat(it.next(), is(2));
-		assertThat(it.hasNext(), is(true));
-		assertThat(it.next(), is(4));
-		assertThat(it.hasNext(), is(true));
-		assertThat(it.next(), is(6));
-		assertThat(it.hasNext(), is(true));
-		assertThat(it.next(), is(8));
+	public void shouldReturnFalseCauseThereIsNoAnyPrimeNumber() {
+		it = new PrimeIterator(new int[]{4, 6});
+		assertThat("should return false, cause there is no any prime number", it.hasNext(), is(false));
 	}
 }

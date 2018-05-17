@@ -15,19 +15,25 @@ public class MatrixIterator implements Iterator {
 	private int y = 0; // Считаем позицию в ряде.
 
 
-	public MatrixIterator(int[][] value) {
+	public MatrixIterator(final int[][] value) {
 		this.value = value;
 	}
 
+	/**
+	 * Метод показывает существует ли следующий элемент массива.
+	 * @return boolean.
+	 */
 	@Override
 	public boolean hasNext() {
 		int xLength = value.length; // Колличетво столбцов.
 		int yLength = value[xLength - 1].length; // Колличество элементов в строке.
 		return value.length > x && yLength >= y;
 	}
-	  /*
-	  * Метод реализует перевод каретки к следующему элементу массива.
-	  */
+
+	/**
+	 * Метод реализует перевод каретки к следующему элементу массива.
+	 * @return int.
+	 */
 	@Override
 	public Object next() {
 		int result;

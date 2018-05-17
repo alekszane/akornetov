@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project junior
  *         Created on 17.05.2018.
- *	Программа нахождения четноги числа в массиве.
+ *	Программа нахождения четного числа в массиве.
  */
 public class EvenNumbersIterator implements Iterator {
 
@@ -22,11 +22,11 @@ public class EvenNumbersIterator implements Iterator {
 	 * Ищем четные числа в массиве.
 	 * @return если нашли.
 	 */
-	private boolean findEvenNum(){
+	private boolean findEvenNum() {
 		boolean res = false;
 
-		for (;this.index < this.numbers.length; this.index++){
-			if ((this.numbers[this.index] % 2) == 0 && this.numbers[this.index] != 0){
+		for (; this.index < this.numbers.length; this.index++) {
+			if ((this.numbers[this.index] % 2) == 0 && this.numbers[this.index] != 0) {
 				res = true;
 				break;
 			}
@@ -43,7 +43,7 @@ public class EvenNumbersIterator implements Iterator {
 	public Object next() {
 		boolean result = this.findEvenNum();
 
-		if (!result){
+		if (!result) {
 			throw new NoSuchElementException();
 		}
 
