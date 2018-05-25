@@ -9,11 +9,9 @@ import java.util.NoSuchElementException;
  *         Created on 14.05.2018.
  */
 public class MatrixIterator implements Iterator {
-
 	private final int[][] value;
 	private int x = 0; // Считаем позицию в столбце.
 	private int y = 0; // Считаем позицию в ряде.
-
 
 	public MatrixIterator(final int[][] value) {
 		this.value = value;
@@ -21,6 +19,7 @@ public class MatrixIterator implements Iterator {
 
 	/**
 	 * Метод показывает существует ли следующий элемент массива.
+	 *
 	 * @return boolean.
 	 */
 	@Override
@@ -32,22 +31,21 @@ public class MatrixIterator implements Iterator {
 
 	/**
 	 * Метод реализует перевод каретки к следующему элементу массива.
+	 *
 	 * @return int.
 	 */
 	@Override
 	public Object next() {
 		int result;
-
-	if (value.length == 0) {
-		throw new NoSuchElementException();
-	}
+		if (value.length == 0) {
+			throw new NoSuchElementException();
+		}
 		int yLength = value[x].length;
 		result = value[x][y++];
-
-			if (y == yLength) {
-				x++;
-				y = 0;
-			}
+		if (y == yLength) {
+			x++;
+			y = 0;
+		}
 		return result;
 	}
 }

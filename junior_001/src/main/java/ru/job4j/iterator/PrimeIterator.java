@@ -7,8 +7,8 @@ import java.util.NoSuchElementException;
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project junior
  *         Created on 18.05.2018.
- * Итератор возвращающий только простые числа.
- * Простым является натуральное число больше 1, которое делится без остатка только на 1 и на себя.
+ *         Итератор возвращающий только простые числа.
+ *         Простым является натуральное число больше 1, которое делится без остатка только на 1 и на себя.
  */
 public class PrimeIterator implements Iterator {
 	private int[] numbers;
@@ -29,12 +29,11 @@ public class PrimeIterator implements Iterator {
 				return false;
 			}
 		}
-			return true;
+		return true;
 	}
 
 	private boolean findPrimeNum() {
 		boolean res = false;
-
 		for (; this.index < this.numbers.length; this.index++) {
 			if (isPrimeNum(this.numbers[this.index])) {
 				res = true;
@@ -43,7 +42,6 @@ public class PrimeIterator implements Iterator {
 		}
 		return res;
 	}
-
 
 	/**
 	 * Returns {@code true} if the iteration has more elements.
@@ -66,11 +64,9 @@ public class PrimeIterator implements Iterator {
 	@Override
 	public Object next() {
 		boolean res = this.findPrimeNum();
-
 		if (!res) {
 			throw new NoSuchElementException();
 		}
-
 		return this.numbers[this.index++];
 	}
 }
