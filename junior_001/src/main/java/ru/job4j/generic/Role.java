@@ -5,6 +5,9 @@ package ru.job4j.generic;
  *         project junior
  *         Created on 28.05.2018.
  */
-public class Role {
+public class Role extends Base {
 
+	public Role(String id) {
+		super(id);
+	}
 }

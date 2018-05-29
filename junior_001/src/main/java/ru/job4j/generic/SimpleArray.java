@@ -1,6 +1,6 @@
 package ru.job4j.generic;
 
-import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import java.util.Iterator;
 
 /**
@@ -8,7 +8,7 @@ import java.util.Iterator;
  *         project junior
  *         Created on 24.05.2018.
  */
-public class SimpleArray<T> {
+public class SimpleArray<T> implements Iterable {
 	Object[] array;
 	int index;
 
@@ -42,5 +42,16 @@ public class SimpleArray<T> {
 	public T get(int index) {
 		checkIndex(index);
 		return (T) this.array[index];
+	}
+
+	/**
+	 * Returns an iterator over elements of type {@code T}.
+	 *
+	 * @return an Iterator.
+	 */
+	@NotNull
+	@Override
+	public Iterator<T> iterator() {
+		return (Iterator<T>) array[index];
 	}
 }

@@ -5,6 +5,12 @@ package ru.job4j.generic;
  *         project junior
  *         Created on 28.05.2018.
  */
-public interface Store {
+public interface Store<T  extends Base> {
+	void add(T model);
 
+	boolean replace(String id, T model);
+
+	boolean delete(String id);
+
+	T findById(String id);
 }

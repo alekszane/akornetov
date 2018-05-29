@@ -5,6 +5,14 @@ package ru.job4j.generic;
  *         project junior
  *         Created on 28.05.2018.
  */
-public class Base {
+public abstract class Base {
+	private final String id;
 
+	protected Base(final String id) {
+		this.id = id;
+	}
+
+	public String getId() {
+		return id;
+	}
 }
