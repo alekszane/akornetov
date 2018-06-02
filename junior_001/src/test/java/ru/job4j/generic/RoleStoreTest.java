@@ -24,15 +24,14 @@ public class RoleStoreTest {
 	}
 
 	@Test
-	public void whenDeletItemThenItNotFoundInStore() {
+	public void whenDeletItemThenIsTrue() {
 		Role role = new Role("role1");
 		Role role2 = new Role("role2");
 		RoleStore roleStore = new RoleStore(2);
 		roleStore.add(role);
 		roleStore.add(role2);
-		roleStore.delete("role1");
-		Base result = roleStore.findById("role1");
-		Base expected = null;
+		boolean result = roleStore.delete("role1");
+		boolean expected = true;
 		Assert.assertThat(result, is(expected));
 	}
 
@@ -41,11 +40,11 @@ public class RoleStoreTest {
 		Role role = new Role("role1");
 		Role role2 = new Role("role2");
 		Role role3 = new Role("role3");
-		RoleStore roleStore = new RoleStore(3);
+		RoleStore roleStore = new RoleStore(2);
 		roleStore.add(role);
 		roleStore.add(role2);
 		roleStore.replace("role1", role3);
-		Base result = roleStore.findById("role3");
-		Assert.assertThat(result, is(role));
+		Base result = role3;
+		Assert.assertThat(result, is(roleStore.findById("role3")));
 	}
 }

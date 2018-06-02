@@ -23,10 +23,12 @@ public class AbstractStore implements Store<Base> {
 	public boolean replace(String id, Base model) {
 		boolean result = false;
 		for (int i = 0; i < this.size; i++) {
-			if (this.store.get(i).getId().equals(id)) {
-				this.store.array[i] = model;
-				result = true;
-				break;
+			if (this.store != null) {
+				if (this.store.get(i).getId().equals(id)) {
+					store.set(getIndexStore(id), model);
+					result = true;
+					break;
+				}
 			}
 		}
 		return  result;
@@ -45,6 +47,20 @@ public class AbstractStore implements Store<Base> {
 			}
 		}
 		return  result;
+	}
+
+	/**
+	 * @param id
+	 * @return If don't find id return -1
+	 */
+	public int getIndexStore(String id) {
+		int res = -1;
+		for (int index = 0; index < size; index++) {
+			if (id.equals(((Base) store.get(index)).getId())) {
+				res = index;
+			}
+		}
+		return res;
 	}
 
 	@Override

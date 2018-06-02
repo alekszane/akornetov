@@ -6,7 +6,6 @@ package ru.job4j.generic;
  *         Created on 28.05.2018.
  */
 public class RoleStore extends AbstractStore {
-
 	public RoleStore(int size) {
 		super(size);
 	}

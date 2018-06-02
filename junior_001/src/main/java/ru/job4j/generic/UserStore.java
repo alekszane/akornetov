@@ -9,7 +9,6 @@ import java.util.List;
  *         Created on 28.05.2018.
  */
 public class UserStore extends AbstractStore {
-
 	public UserStore(int size) {
 		super(size);
 	}
