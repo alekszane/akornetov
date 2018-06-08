@@ -63,7 +63,6 @@ public class SimpleArray<T> implements Iterable {
 				if (!this.hasNext()) {
 					throw new NoSuchElementException();
 				}
-
 				return (T) array[this.index++];
 			}
 		};
