@@ -6,9 +6,9 @@ package ru.job4j.generic;
  *         Created on 28.05.2018.
  */
 public interface Store<T  extends Base> {
-	void add(T model);
+	void add(T model); //Add model to store/
 
-	boolean replace(String id, T model);
+	boolean replace(String id, T model); //Replace model to store/
 
 	boolean delete(String id);
 

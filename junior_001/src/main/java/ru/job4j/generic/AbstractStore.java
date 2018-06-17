@@ -5,7 +5,7 @@ package ru.job4j.generic;
  *         project junior
  *         Created on 28.05.2018.
  */
-public class AbstractStore implements Store<Base> {
+public class AbstractStore<T extends Base> implements Store<Base> {
 	protected SimpleArray<Base> store;
 	private int size;
 
