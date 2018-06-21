@@ -32,7 +32,6 @@ public class SimpleArrayList<E> {
 		this.first = next;
 		return first.date;
 	}
-
 	/**
 	 * Реализовать метод удаления первого элемента в списке.
 	 */
@@ -61,24 +60,4 @@ public class SimpleArrayList<E> {
 	public int getSize() {
 		return this.size;
 	}
-
-	/**
-	 * Returns an iterator over elements of type {@code T}.
-	 *
-	 * @return an Iterator.
-	 */
-
-	/**
-	 * Класс предназначен для хранения данных.
-	 */
-	private static class Node<E> {
-
-		E date;
-		Node<E> next;
-
-		Node(E date) {
-			this.date = date;
-		}
-	}
-
 }

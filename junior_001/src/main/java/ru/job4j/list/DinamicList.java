@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
  *         project junior
  *         Created on 13.06.2018.
  */
-public class DinamicList<E> implements Iterable<E>{
+public class DinamicList<E> implements Iterable<E> {
 
 	private Object[] container; // Container for data storage.
 	private int position = 0;

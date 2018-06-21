@@ -33,7 +33,7 @@ public class DinamicListTest {
 	}
 
 	@Test
-	public void whenIteratorCreateWhenNextReturnElementsSequentially() {
+	public void whenIteratorCreateThenNextReturnElementsSequentially() {
 		Iterator<Integer> iterator = dinamicList.iterator();
 		Assert.assertTrue(iterator.hasNext());
 		Assert.assertThat(iterator.next(), is(1));
