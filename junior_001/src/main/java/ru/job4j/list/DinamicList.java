@@ -62,7 +62,7 @@ public class DinamicList<E> implements Iterable<E> {
 			int itrPosition = 0;
 
 			/**
-			 * Method check iterator has next element.
+			 * Method check iterator has prev element.
 			 * @return Return true, if more left elements to iterate.
 			 * @throws  ConcurrentModificationException Throw when collection modified.
 			 */
@@ -79,7 +79,7 @@ public class DinamicList<E> implements Iterable<E> {
 			}
 
 			/**
-			 * Returns the next element in the iteration.
+			 * Returns the prev element in the iteration.
 			 * @return element
 			 * @throws NoSuchElementException if no more elements to iterate.
 			 */
