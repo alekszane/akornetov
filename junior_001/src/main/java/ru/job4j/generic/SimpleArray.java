@@ -1,17 +1,16 @@
 package ru.job4j.generic;
 
-import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * @author Aleksey Kornetov (all-1313@yandex.ru)
  *         project junior
  *         Created on 24.05.2018.
  */
-public class SimpleArray<T> {
-	Object[] array;
-	int index;
-
+public class SimpleArray<T> implements Iterable {
+	 Object[] array;
+	private int index;
 	public SimpleArray(int size) {
 		this.array = new Object[size];
 	}
@@ -29,7 +28,7 @@ public class SimpleArray<T> {
 	}
 
 	public void set(int index, T model) {
-		this.array[this.index] = model;
+		this.array[index] = model;
 	}
 
 	public void delete(int index) {
@@ -42,5 +41,30 @@ public class SimpleArray<T> {
 	public T get(int index) {
 		checkIndex(index);
 		return (T) this.array[index];
+	}
+
+	/**
+	 * Returns an iterator over elements of type {@code T}.
+	 *
+	 * @return an Iterator.
+	 */
+	@Override
+	public Iterator<T> iterator() {
+		return new Iterator<T>() {
+			private int index = 0;
+
+			@Override
+			public boolean hasNext() {
+				return this.index < index;
+			}
+
+			@Override
+			public T next() {
+				if (!this.hasNext()) {
+					throw new NoSuchElementException();
+				}
+				return (T) array[this.index++];
+			}
+		};
 	}
 }
