@@ -13,17 +13,17 @@ import java.util.NoSuchElementException;
 public class DinamicList<E> implements Iterable<E> {
 
 	private Object[] container; // Container for data storage.
-	private int position = 0;
+	private int position = 0; //counter position.
 
-	DinamicList(int size) {
-	this.container = new Object[size];
+	public DinamicList() {
+		this.container = new Object[1];
 	}
 
 	/**
 	 * This method add element to collection, and
 	 * @param value
 	 */
-	 void add(E value) {
+	public void add(E value) {
 		 if (this.container.length >= this.position) {
 			 this.container = Arrays.copyOf(this.container, this.container.length * 2);
 		 }
@@ -37,12 +37,13 @@ public class DinamicList<E> implements Iterable<E> {
 	 * @return element E type.
 	 * @throws ArrayIndexOutOfBoundsException
 	 */
-	 E get(int index) throws ArrayIndexOutOfBoundsException {
+	 public E get(int index) throws ArrayIndexOutOfBoundsException {
 		if (index < 0 || index > this.container.length) {
 			throw new ArrayIndexOutOfBoundsException("Index out of range container!");
 		}
 		return (E) this.container[index];
 	}
+
 	/**
 	 * Returns an iterator over elements of type {@code T}.
 	 *

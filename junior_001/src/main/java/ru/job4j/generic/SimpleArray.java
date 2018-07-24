@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  *         project junior
  *         Created on 24.05.2018.
  */
-public class SimpleArray<T> implements Iterable {
+public class SimpleArray<T> implements Iterable<T> {
 	 Object[] array;
 	private int index;
 	public SimpleArray(int size) {

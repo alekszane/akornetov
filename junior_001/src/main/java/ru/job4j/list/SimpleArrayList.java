@@ -1,5 +1,8 @@
 package ru.job4j.list;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
@@ -10,7 +13,7 @@ import java.util.NoSuchElementException;
 /**
  * Класс SimpleArrayList.
  */
-public class SimpleArrayList<E> {
+public class SimpleArrayList<E> implements Iterable<E> {
 
 	private int size; //Field contain number element collection.
 	private Node<E> first; //Field contain link of the first element.
@@ -99,5 +102,17 @@ public class SimpleArrayList<E> {
 	 */
 	public int getSize() {
 		return this.size;
+	}
+
+
+	/**
+	 * Returns an iterator over elements of type {@code T}.
+	 *
+	 * @return an Iterator.
+	 */
+	@NotNull
+	@Override
+	public Iterator<E> iterator() {
+		return null;
 	}
 }

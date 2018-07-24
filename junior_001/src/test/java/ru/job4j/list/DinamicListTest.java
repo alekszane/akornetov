@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  *         Created on 17.06.2018.
  */
 public class DinamicListTest {
-	private DinamicList<Integer> dinamicList = new DinamicList<>(3);
+	private DinamicList<Integer> dinamicList = new DinamicList<>();
 
 	@Before
 	public void before() {
@@ -49,5 +49,4 @@ public class DinamicListTest {
 		dinamicList.add(4);
 		iterator.hasNext();
 	}
-
 }
